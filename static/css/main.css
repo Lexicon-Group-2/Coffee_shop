@@ -1,0 +1,149 @@
+* {
+  padding: 0;
+  margin: 0;
+  color: #1a1f36;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f4f4f4;
+}
+
+.nav-link {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.navbar {
+  padding: 0.5rem 50px 0.5rem 50px;
+}
+
+.navbar-tex {
+  color: white;
+  font-size: 1.3rem;
+  display: block;
+  padding: 0.6rem 1rem;
+}
+
+.signup-message {
+  position:fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  min-height: 100vh;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.signup-message a {
+  width: 100px;
+  padding: 5px;
+  border: 2px solid white;
+  background: rgb(190, 190, 190);
+  text-decoration: none;
+  color: white;
+}
+
+.signup-form, .update-form {
+  max-width: 450px;
+  margin: 50px auto 0 auto;
+  border: 2px solid rgb(215, 215, 215);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow:
+    10px 0px 30px rgb(215, 215, 215),
+   -10px 0px 30px rgb(215, 215, 215);
+}
+
+.update-form {
+  max-width: 600px;
+}
+
+.signup-form h3 {
+  width: 100%;
+  background: rgb(207, 207, 207);
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 10px;
+}
+
+.signup-form h4 {
+  font-size: 1rem;
+  margin-bottom: 13px;
+  text-decoration: none;
+}
+
+.signup-form h4 a:hover {
+  text-decoration: none;
+}
+
+.signup-form form {
+  font-size: 1rem;
+}
+
+.btn-block {
+  margin-top: 0px;
+  width: 100%;
+}
+
+.errorlist {
+  /* list-style: none;
+  padding: 15px 0 15px 0;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb; */
+  display: none;
+}
+
+.ul-error-list {
+  margin-left: -10px;
+}
+
+.ul-error-list li {
+  padding: 3px;
+}
+
+.btn-close {
+  transition: 0.5s all ease
+}
+
+.btn-close:hover {
+  transform: rotate(-180deg);
+  transition: 1s all ease
+}
+
+p label[for=id_image] {
+  margin-top: -100px;
+}
+
+.margin {
+  margin-top: -25px;
+}
+
+.whole-page {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  backdrop-filter: blur(3px);
+  background: rgba(237, 237, 237, 0.336);
+}
+
+.btn-custom {
+  width: 75px;
+  margin: 0 10px 0 10px;
+}
