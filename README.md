@@ -27,7 +27,7 @@ This app will contain all the logic regardin:
 - [x] Apply some css to the login form.
 - [x] Perhaps position the login form in the center of the screen (horizontally) with some margin-top.
 
-### **registration.html**
+### **signup.html**
 
 - [x] Apply some css to this page as well.
 - [x] display: grid should work nice with grid template for columns set to 2 columns.
