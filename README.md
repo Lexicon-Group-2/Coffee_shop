@@ -4,7 +4,7 @@
 
 # Main app
 
-This app will contain all the logic regardin:
+This app will contain all the logic regarding:
 * creation of an account,
 * user login,
 * user logout,
