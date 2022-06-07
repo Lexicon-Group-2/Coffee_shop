@@ -42,6 +42,12 @@ This app will contain all the logic regarding:
 
 # Store app (or whatever name you would like to have)
 
+This app will contain all the logic regarding:
+* product rendering,
+* shoping cart,
+* checkout page,
+* wish list.
+
 ### **store.html**
 
 - [ ] Decide what content this page should have.
