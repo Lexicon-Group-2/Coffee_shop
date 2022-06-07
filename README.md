@@ -1,4 +1,4 @@
-# Coffee_shop
+# Coffee shop
 
 ### Any ideas from you guys are most welcome!
 
