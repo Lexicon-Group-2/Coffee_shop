@@ -47,7 +47,22 @@ body {
   color: white;
 }
 
-
+.nav-item {
+  position: relative;
+}
+#cart-total {
+  display: block;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  text-align: center;
+  color: #fff;
+  background: red;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: 14px;
+}
 
 
 
