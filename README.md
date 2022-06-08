@@ -55,7 +55,20 @@ This app will contain all the logic regarding:
 - [ ] Decide what content this page should have.
 - [ ] In principle it should contain all the products within our shop.
 - [ ] If we decide to categorize products, for instance types of coffee, type of coffee machines, accesories and so on, then in the store.html file should have small cards and on click it will navigate to a certain category.
-- [ ] Categories should perhaps also be visible on the navbar menu.
+- [ ] Categories should perhaps also be visible in the store page.
+
+### **product_list.card**
+
+- [ ] The easiest way is to make a simple html file with only product card and it's own css within head section.
+- [ ] Later we can take the css part into our static files to make it clean.
+- [ ] The product card should contain:
+  - [ ] a product image (include any image just to make it work, it doesn't have to be done using django, just plain html),
+  - [ ] Add to cart button,
+  - [ ] heart button to add to the wish list,
+  - [ ] price,
+  - [ ] title,
+  - [ ] very short description.
+- [ ] For any of the above mentioned things use plain html and just do the styling. Later on we will connect it with django and python.
 
 ### **Products**
 
