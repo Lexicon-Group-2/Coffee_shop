@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-secondary bg-secondary">
-  <a class="navbar-brand nav-link" href="{% url 'home' %}">Logo</a>
+  <a class="navbar-brand nav-link ms-5" href="{% url 'home' %}">Logo img</a>
   <div class="collapse navbar-collapse container-fluid" id="navbarSupportedContent">
     <div>
       <ul class="navbar-nav mr-auto">
@@ -8,32 +8,42 @@
             <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
           </li>
         {% endif %}
-        
-        
-        
         </li>
       </ul>
     </div>
     <div>
       <ul class="navbar-nav mr-auto">
       {% if user.is_authenticated %}
-        <span class="navbar-tex">Logged in as: </span>
-        
         <li class="nav-item">
-          <a class="logout nav-link" href="{% url 'user' %}"><b>user {{user.username}}</b></a>
+          <span class="navbar-tex"></span>
         </li>
         <li class="nav-item">
-          <a class="logout nav-link" href="{% url 'logout' %}">Logout</a>
+          <a class="logout username nav-link" href="{% url 'user' %}">
+            <i class='fas fa-user-alt'></i>
+            {{user.username}}</a>
+        </li>
+        <li class="nav-item">
+          <a class="logout nav-link" href="{% url 'logout' %}">
+            <i class='fas fa-sign-out-alt'></i>
+          </a>
         </li>
       {% else %}
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'signup' %}">Signup</a>
+          <a class="logout nav-link" href="{% url 'signup' %}">Signup</a>
         </li>
         <li class="nav-item">
           <a class="logout nav-link" href="{% url 'login' %}">Login</a></li>
         </li>
       {% endif %}
+        <li class="nav-item">
+          <a class="logout nav-link" href=""><img class="cart-img" src="/media/cart_not_empty.png" alt="">
+          </a>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
+
+<!-- Shoping cart downloaded from
+https://www.flaticon.com/premium-icon/shopping-cart_2543206?related_id=2543378&origin=search
+-->

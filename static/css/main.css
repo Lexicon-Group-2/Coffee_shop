@@ -12,18 +12,46 @@ body {
 .nav-link {
   color: white;
   font-size: 1.5rem;
+  padding: 5px;
 }
 
 .navbar {
-  padding: 0.5rem 50px 0.5rem 50px;
+  padding: 0;
 }
 
 .navbar-tex {
   color: white;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   display: block;
-  padding: 0.6rem 1rem;
+  padding-top: 0.8rem ;
 }
+
+.cart-img {
+  width: 40px;
+  margin-top: -5px;
+  padding: 0px;
+}
+
+.logout {
+  margin: 5px;
+  color: white;
+  margin-top: 8px;
+}
+
+.fas {
+  color: white;
+}
+
+.fas:hover,
+.logout:hover {
+  color: white;
+}
+
+
+
+
+
+
 
 .signup-message {
   position:fixed;
@@ -93,13 +121,6 @@ body {
 }
 
 .errorlist {
-  /* list-style: none;
-  padding: 15px 0 15px 0;
-  text-align: center;
-  font-size: 1.1rem;
-  color: #721c24;
-  background-color: #f8d7da;
-  border-color: #f5c6cb; */
   display: none;
 }
 
@@ -128,6 +149,8 @@ p label[for=id_image] {
   margin-top: -25px;
 }
 
+
+/* A pop message to confirm something */
 .whole-page {
   display: flex;
   flex-direction: column;
@@ -147,3 +170,7 @@ p label[for=id_image] {
   width: 75px;
   margin: 0 10px 0 10px;
 }
+
+
+
+

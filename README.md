@@ -5,10 +5,11 @@
 # Main app
 
 This app will contain all the logic regarding:
-* creation of an account,
-* user login,
-* user logout,
-* basic template for the website.
+
+- creation of an account,
+- user login,
+- user logout,
+- basic template for the website.
 
 ### **index.html**
 
@@ -21,6 +22,7 @@ This app will contain all the logic regarding:
 - [ ] Aply some css to the navbar.
 - [ ] This file is in the folder templates/main/navbar.html.
 - [ ] Should navbar contain signup url once the person is loged in. In the current stage of the project it is not implemente. However, we have a link within login page...
+- [ ] Optionally, add a search button to the navabr. It should render all the products...
 
 ### **login.html**
 
@@ -39,14 +41,14 @@ This app will contain all the logic regarding:
 
 - [x] In this page show each review that user have made.
 
-
 # Store app (or whatever name you would like to have)
 
 This app will contain all the logic regarding:
-* product rendering,
-* shoping cart,
-* checkout page,
-* wish list.
+
+- product rendering,
+- shoping cart,
+- checkout page,
+- wish list.
 
 ### **store.html**
 
@@ -67,7 +69,6 @@ This app will contain all the logic regarding:
 - [ ] This file should contain all the items that person have put into the cart.
 - [ ] It should also contain checkout button wich will on click redirect to another page.
 
-
 ### **wish_list.html**
 
 - [ ] This file should contain all the items that user have put into the wish list.
@@ -77,7 +78,7 @@ This app will contain all the logic regarding:
 
 # Some python logic
 
-### **storeApp/*.py**
+### **storeApp/\*.py**
 
 - [ ] Write some viewes and urls for the logic regarding the store app.
 - [ ] More details about this will write later.
