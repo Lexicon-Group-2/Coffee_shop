@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'bootstrap5',
     'widget_tweaks',
     'formtags',
-    'main'
+    'main',
+    'coffee_store',
 ]
 
 MIDDLEWARE = [

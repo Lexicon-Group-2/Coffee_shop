@@ -1,0 +1,29 @@
+{% extends "main/base.html" %}
+
+{% block body_block %}
+  <h1>Store page</h1>
+
+  <h3>Perhaps something like this</h3>
+  <h4>This is only to have valid urls, you can change names of the links.</h4>
+  <h4>The style is within static/css/main.css, go there and implement your own...</h4>
+
+  <div class="category-container d-flex m-3 p-3">
+
+    <a href="{% url 'coffee_machines' %}">
+      <div class="store-category">Coffee machines</div>
+    </a>
+
+    <a href="{% url 'coffee_types' %}">
+      <div class="store-category">Coffee types</div>
+    </a>
+
+    <a href="{% url 'coffee_mugs' %}">
+      <div class="store-category">Mugs</div>
+    </a>
+
+    <a href="{% url 'other_accessories' %}">
+      <div class="store-category">Other accessories</div>
+    </a>
+
+  </div>
+{% endblock %}
