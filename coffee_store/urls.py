@@ -7,7 +7,7 @@ urlpatterns = [
     path('store/coffee_types', views.coffee_types, name='coffee_types'),
     path('store/coffee_mugs', views.coffee_mugs, name='coffee_mugs'),
     path('store/other_accessories', views.other_accessories, name='other_accessories'),
-    
+    path('cart/', views.cart, name='cart'),
     
 ]
 

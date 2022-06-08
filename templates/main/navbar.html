@@ -10,7 +10,7 @@
         </li>
         {% if user.is_superuser %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
+            <a class="logout nav-link" href="{% url 'admin:index' %}">Admin</a>
           </li>
         {% endif %}
       </ul>
@@ -41,9 +41,9 @@
         </li>
       {% endif %}
         <li class="nav-item">
-          <a class="logout nav-link" href=""><img class="cart-img" src="/media/cart_not_empty.png" alt="">
+          <a class="logout nav-link" href="{% url 'cart' %}"><img class="cart-img" src="/media/cart_not_empty.png" alt="">
           </a>
-          <div id="cart-total">99</div>
+          <div id="cart-total">{{num_items}}</div>
         </li>
       </ul>
     </div>

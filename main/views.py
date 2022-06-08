@@ -12,6 +12,15 @@ from main.models import Profile
 User._meta.get_field('email')._unique = True
 
 
+from django import template
+
+register = template.Library()
+@register.simple_tag
+def number_of_messages(request):
+    num_items = 80
+    return num_items
+
+
 def index(request):
   return render(request, 'main/index.html', {})
 

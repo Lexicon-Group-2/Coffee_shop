@@ -26,3 +26,7 @@ def coffee_mugs(request):
 
 def other_accessories(request):
   return render(request, 'coffee_store/other_accessories.html', {})
+
+
+def cart(request):
+  return render(request, 'coffee_store/cart.html', {})

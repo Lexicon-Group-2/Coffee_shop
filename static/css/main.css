@@ -65,6 +65,8 @@ body {
   font-size: 14px;
 }
 
+
+/* CSS for category buttons in the store page */
 .category-container {
   display: flex;
   width: 100%;
@@ -83,7 +85,6 @@ body {
   -5px 5px 20px rgba(0, 0, 0, 0.3);
 }
 
-
 .category-container a {
   text-decoration: none;
   font-size: 2rem;
@@ -97,6 +98,29 @@ body {
   color: whitesmoke;
   background: black;
 }
+
+.fa-home {
+  font-size: 1.8rem;
+}
+
+.col-md-8 a {
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.url-arrow {
+  font-size: 2.5rem;
+  margin: 10px;
+}
+
+/* CSS for the product container div */
+.product-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
 
 
 
