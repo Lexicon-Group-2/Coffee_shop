@@ -69,7 +69,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'main.num_items.items_processor',
+                'main.context_processors.items_processor',
+                'main.context_processors.arrow',
             ],
             'libraries' : {
                 'staticfiles': 'django.templatetags.static', 

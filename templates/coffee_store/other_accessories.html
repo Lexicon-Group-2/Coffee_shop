@@ -4,11 +4,12 @@
 <div class="row">
   <div class="col-md-8">
     <a href="{% url 'home' %}"><i class="fa fa-home"></i></a>
-    <span class="url-arrow">&#8250;</span>
+    <span class="url-arrow">{{arrow|safe}}</span>
     <a href="{% url 'store' %}"><span class="url-text">Store</span></a>
-    <span class="url-arrow">&#8250;</span>
+    <span class="url-arrow">{{arrow|safe}}</span>
     <a href="{% url 'other_accessories' %}"><span class="url-text">Other accessories</span></a>
   </div>
 </div>
   <h1>Other accessories</h1>
+
 {% endblock %}

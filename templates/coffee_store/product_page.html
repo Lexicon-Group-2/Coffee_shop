@@ -5,11 +5,11 @@
 <div class="row">
   <div class="col-md-8">
     <a href="{% url 'home' %}"><i class="fa fa-home"></i></a>
-    <span class="url-arrow">&#8250;</span>
+    <span class="url-arrow">{{arrow|safe}}</span>
     <a href="{% url 'store' %}"><span class="url-text">Store</span></a>
-    <span class="url-arrow">&#8250;</span>
+    <span class="url-arrow">{{arrow|safe}}</span>
     <a href="{% url 'coffee_mugs' %}"><span class="url-text">Coffee mugs</span></a>
-    <span class="url-arrow">&#8250;</span>
+    <span class="url-arrow">{{arrow|safe}}</span>
     <span class="url-text">{{product_title}}</span>
   </div>
 </div>
