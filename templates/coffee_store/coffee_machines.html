@@ -11,36 +11,20 @@
   </div>
 </div>
 
-  <div class="d-flex text-center row m-3"><h2>Coffee machines</h2></div>
+<div class="d-flex text-center row m-3"><h2>Coffee machines</h2></div>
 
-  
 <div class="product-container">
-  <div class="card col-md-3 m-2">
-    <img src="/media/products/Coffee_machine/5940476.jpg" class="card-img-top" alt="">
-    <div class="card-body">
-      <h5 class="card-title">Moccamaster Optio</h5>
-      <h3>Price: 3290kr</h3>
-      <a href="#" class="btn btn-outline-secondary">Add to cart</a>
+  {% for product in products %}
+    <div class="card col-md-4 m-3 product">
+      <div class="imgwrap">
+        <img src="{{product.image1.url}}" class="card-img-top" alt="">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{product.title}}</h5>
+        <h3>Price: {{product.price}}kr</h3>
+        <a href="" class="btn btn-outline-secondary">Add to cart</a>
+      </div>
     </div>
-  </div>
-
-  <div class="card col-md-3 m-2">
-    <img src="/media/products/Coffee_machine/5940476.jpg" class="card-img-top" alt="">
-    <div class="card-body">
-      <h5 class="card-title">Moccamaster Optio</h5>
-      <h3>Price: 3290kr</h3>
-      <a href="#" class="btn btn-outline-secondary">Add to cart</a>
-    </div>
-  </div>
-
-  <div class="card col-md-3 m-2">
-    <img src="/media/products/Coffee_machine/5940476.jpg" class="card-img-top" alt="">
-    <div class="card-body">
-      <h5 class="card-title">Moccamaster Optio</h5>
-      <h3>Price: 3290kr</h3>
-      <a href="#" class="btn btn-outline-secondary">Add to cart</a>
-    </div>
-  </div>
-
-
+  {% endfor %}
+</div>
 {% endblock %}

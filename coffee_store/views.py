@@ -5,15 +5,20 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from main.models import Profile, User
+from .models import CoffeeMachine
+
 
 # Create your views here.
 
 def store(request):
-  return render(request, 'coffee_store/store.html', {})
+  context = {}
+  return render(request, 'coffee_store/store.html', context)
 
 
 def coffee_machines(request):
-  return render(request, 'coffee_store/coffee_machines.html', {})
+  products = CoffeeMachine.objects.all()
+  context = {'products' : products}
+  return render(request, 'coffee_store/coffee_machines.html', context)
 
 
 def coffee_types(request):
@@ -29,4 +34,8 @@ def other_accessories(request):
 
 
 def cart(request):
-  return render(request, 'coffee_store/cart.html', {})
+  context = {}
+  return render(request, 'coffee_store/cart.html', context)
+
+def checkout(request):
+  return render(request, 'coffee_store/checkout.html', {})
