@@ -92,3 +92,6 @@ def user_logout(request):
 def user(request):
   return render(request, 'main/user.html', {})
 
+def home(request): 
+  return render(request,'main/homepage.html',{})
+
