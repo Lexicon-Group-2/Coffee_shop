@@ -1,0 +1,183 @@
+{% extends "main/base.html" %}
+
+{% block body_block %}
+
+<div class="row">
+  <div class="col-md-8">
+    <a href="{% url 'home' %}"><i class="fa fa-home"></i></a>
+    <span class="url-arrow">{{arrow|safe}}</span>
+    <a href="{% url 'store' %}"><span class="url-text">Store</span></a>
+    <span class="url-arrow">{{arrow|safe}}</span>
+    <a href="{% url 'coffee_mugs' %}"><span class="url-text">Coffee mugs</span></a>
+    <span class="url-arrow">{{arrow|safe}}</span>
+    <span class="url-text">{{product_title}}</span>
+  </div>
+</div>
+
+<h1>Html page for each product.</h1>
+<h1>We need to create it only once and it will be a template for each product. Nice thing about django </h1>
+
+<!--<h1>Checkout page</h1>-->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Load favicon to remove some console errors -->
+  <link rel="icon" href="/media/favicon.ico">
+
+  <!-- Load font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+  <!-- Load the bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Load our static css files after this line -->
+  <link rel="stylesheet" href="card.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="image-container">
+                        <div class="first">
+                            <div class="d-flex justify-content-between align-items-center"> <span class="discount">-25%</span> <span class="wishlist"><i class="fa fa-heart-o"></i></span> </div>
+                        </div> <img src="https://kahlstkh.se/wp-content/uploads/2018/03/kaffe-espresso.jpg" class="img-fluid rounded thumbnail-image">
+                    </div>
+                    <div class="product-detail-container p-2">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="dress-name">Espresso Coffee</h5>
+                            <div class="d-flex flex-column mb-2"> <span class="new-price">$3.99</span> <small class="old-price text-right">$5.99</small> </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center pt-1">
+                            <div class="color-select d-flex "> <input type="button" name="grey" class="btn creme"> <input type="button" name="red" class="btn red ml-2"> <input type="button" name="blue" class="btn blue ml-2"> </div>
+                            <div class="d-flex "> <span class="item-size mr-2 btn" type="button">S</span> <span class="item-size mr-2 btn" type="button">M</span> <span class="item-size btn" type="button">L</span> </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center pt-1">
+                            <div> <i class="fa fa-star-o rating-star"></i> <span class="rating-number">4.8</span> </div> <span class="buy">BUY +</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <div class="card vouchers">
+                        <div class="voucher-divider">
+                            <div class="voucher-left text-center"> <span class="voucher-name">Monday Happy</span>
+                                <h5 class="voucher-code">#MONHPY</h5>
+                            </div>
+                            <div class="voucher-right text-center border-left">
+                                <h5 class="discount-percent">20%</h5> <span class="off">Off</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="image-container">
+                        <div class="first">
+                            <div class="d-flex justify-content-between align-items-center"> <span class="discount">-25%</span> <span class="wishlist"><i class="fa fa-heart-o"></i></span> </div>
+                        </div> <img src="https://kahlstkh.se/wp-content/uploads/2018/03/kaffe-malet.jpg" class="img-fluid rounded thumbnail-image">
+                    </div>
+                    <div class="product-detail-container p-2">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="dress-name">Ground Coffee</h5>
+                            <div class="d-flex flex-column mb-2"> <span class="new-price">$3.99</span> <small class="old-price text-right">$5.99</small> </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center pt-1">
+                            <div class="color-select d-flex "> <input type="button" name="grey" class="btn creme"> <input type="button" name="darkblue" class="btn darkblue ml-2"> </div>
+                            <div class="d-flex "> <span class="item-size mr-2 btn" type="button">S</span> <span class="item-size mr-2 btn" type="button">M</span> <span class="item-size btn" type="button">L</span> </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center pt-1">
+                            <div> <i class="fa fa-star-o rating-star"></i> <span class="rating-number">4.8</span> </div> <span class="buy">BUY +</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <div class="card vouchers">
+                        <div class="voucher-divider">
+                            <div class="voucher-left text-center"> <span class="voucher-name">Payday Surprise</span>
+                                <h5 class="voucher-code">#SRPSPYDY</h5>
+                            </div>
+                            <div class="voucher-right text-center border-left">
+                                <h5 class="discount-percent">20%</h5> <span class="off">Off</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="image-container">
+                        <div class="first">
+                            <div class="d-flex justify-content-between align-items-center"> <span class="discount">-25%</span> <span class="wishlist"><i class="fa fa-heart-o"></i></span> </div>
+                        </div> <img src="https://kahlstkh.se/wp-content/uploads/2018/03/kaffe-smaksatt.jpg" class="img-fluid rounded thumbnail-image">
+                    </div>
+                    <div class="product-detail-container p-2">
+                        <div class="d-flex justify-content-between ">
+                            <h5 class="dress-name">Flavored coffee</h5>
+                            <div class="d-flex flex-column mb-2"> <span class="new-price">$3.99</span> <small class="old-price text-right">$5.99</small> </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center pt-1">
+                            <div class="color-select d-flex "> <input type="button" name="grey" class="btn creme"> <input type="button" name="yellow" class="btn yellow ml-2"> <input type="button" name="blue" class="btn blue ml-2"> </div>
+                            <div class="d-flex "> <span class="item-size mr-2 btn" type="button">S</span> <span class="item-size mr-2 btn" type="button">M</span> <span class="item-size btn" type="button">L</span> </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center pt-1">
+                            <div> <i class="fa fa-star-o rating-star"></i> <span class="rating-number">4.2</span> </div> <span class="buy">BUY +</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <div class="card vouchers">
+                        <div class="voucher-divider">
+                            <div class="voucher-left text-center"> <span class="voucher-name">First order</span>
+                                <h5 class="voucher-code">#HPYFRST</h5>
+                            </div>
+                            <div class="voucher-right text-center border-left">
+                                <h5 class="discount-percent">20%</h5> <span class="off">Off</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="image-container">
+                        <div class="first">
+                            <div class="d-flex justify-content-between align-items-center"> <span class="discount">-25%</span> <span class="wishlist"><i class="fa fa-heart-o"></i></span> </div>
+                        </div> <img src="https://kahlstkh.se/wp-content/uploads/2018/03/Br%C3%A4ck-Hallon.jpg" class="img-fluid rounded thumbnail-image">
+                    </div>
+                    <div class="product-detail-container p-2">
+                        <div class="d-flex justify-content-between ">
+                            <h5 class="dress-name">Chocolate</h5>
+                            <div class="d-flex flex-column mb-2"> <span class="new-price">$3.99</span> <small class="old-price text-right">$5.99</small> </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center pt-1">
+                            <div class="color-select d-flex "> <input type="button" name="grey" class="btn creme"> <input type="button" name="red" class="btn red ml-2"> <input type="button" name="blue" class="btn blue ml-2"> </div>
+                            <div class="d-flex "> <span class="item-size mr-2 btn" type="button">S</span> <span class="item-size mr-2 btn" type="button">M</span> <span class="item-size btn" type="button">L</span> </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center pt-1">
+                            <div> <i class="fa fa-star-o rating-star"></i> <span class="rating-number">3.8</span> </div> <span class="buy">BUY +</span>
+                        </div>
+                    </div>
+                </div>
+               <!--  <div class="mt-3">
+                    <div class="card vouchers">
+                        <div class="voucher-divider">
+                            <div class="voucher-left text-center"> <span class="voucher-name">Vegetarian Food</span>
+                                <h5 class="voucher-code">#VEGANLOVE</h5>
+                            </div>
+                            <div class="voucher-right text-center border-left">
+                                <h5 class="discount-percent">20%</h5> <span class="off">Off</span>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
