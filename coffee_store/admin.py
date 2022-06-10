@@ -1,14 +1,16 @@
 from django.contrib import admin
-from .models import CoffeeMachine, CoffeeBeans, CoffeeMugs, Accessory
+from .models import Category, Product
 
 
-class CoffeeMachineAdmin(admin.ModelAdmin):
-    list_display  = ('title', 'price', 'id')
-    search_fields = ['title',]
+class CategoryAdmin(admin.ModelAdmin):
+    list_display  = ('name', 'id')
+    search_fields = ['name',]
 
+class ProductAdmin(admin.ModelAdmin):
+    list_display  = ('title', 'category', 'price', 'id')
+    search_fields = ['name',]
 
 # Register your models here.
-admin.site.register(CoffeeMachine, CoffeeMachineAdmin)
-admin.site.register(CoffeeBeans)
-admin.site.register(CoffeeMugs)
-admin.site.register(Accessory)
+#admin.site.register(CoffeeMachine, CoffeeMachineAdmin)
+admin.site.register(Category, CategoryAdmin)
+admin.site.register(Product, ProductAdmin)

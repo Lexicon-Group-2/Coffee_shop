@@ -13,9 +13,24 @@
 
   <h1>Coffee types</h1>
 
-
-<div class="product-container"></div>
-  <!-- A product card with a for loop -->
+<ul> Sort by:
+  <li class="filters"><a class="btn btn-outline-secondary" href="?sort=low-to-high">Price: low to high</a></li>
+  <li class="filters"><a class="btn btn-outline-secondary" href="?sort=high-to-low">Price: high to low</a></li>
+  <li class="filters"><a class="btn btn-outline-secondary" href="?sort=alpha">Alphabeticaly</a></li>
+</ul>
+<div class="product-container">
+  {% for product in products %}
+    <div class="card col-md-4 m-3 product product-beans">
+      <div class="imgwrap">
+        <img width="70" src="{{product.image1.url}}" class="card-img-top" alt="">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{product.title}}</h5>
+        <h3>Price: {{product.price}}kr</h3>
+        <a href="" class="btn btn-outline-secondary">Add to cart</a>
+      </div>
+    </div>
+  {% endfor %}
 </div>
 
 {% endblock %}
