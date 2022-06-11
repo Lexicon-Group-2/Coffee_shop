@@ -7,6 +7,7 @@ from django.urls import reverse
 from main.models import Profile, User
 from .models import Product
 
+# this function will sort the items based on user input
 def sort_items(request, products):
   sort_by = request.GET.get("sort", "low-to-high") 
   if sort_by == "low-to-high": products = products.order_by("price")
@@ -14,25 +15,28 @@ def sort_items(request, products):
   if sort_by == "alpha":       products = products.order_by("title")
   return products
 
+# it will return the product dictionary with certain category
+def prod_dict(request, category):
+  products = Product.objects.filter( category__name__contains=category )
+  products = sort_items(request, products)
+  return {'products' : products}
+
 
 def store(request):
   context = {}
   return render(request, 'coffee_store/store.html', context)
 
 def coffee_machines(request):
-  products = Product.objects.filter( category__name__contains="Coffee machines" )
-  products = sort_items(request, products)
-  context = {'products' : products}
+  context = prod_dict(request, "Coffee machines")
   return render(request, 'coffee_store/coffee_machines.html', context)
 
 def coffee_types(request):
-  products = Product.objects.filter( category__name__contains="Coffee Beans" )
-  products = sort_items(request, products)
-  context = {'products' : products}
+  context = prod_dict(request, "Coffee Beans")
   return render(request, 'coffee_store/coffee_types.html', context)
 
 def coffee_mugs(request):
-  return render(request, 'coffee_store/coffee_mugs.html', {})
+  context = prod_dict(request, "Coffee mugs")
+  return render(request, 'coffee_store/coffee_mugs.html', context)
 
 def other_accessories(request):
   return render(request, 'coffee_store/other_accessories.html', {})

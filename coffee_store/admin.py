@@ -7,7 +7,7 @@ class CategoryAdmin(admin.ModelAdmin):
     search_fields = ['name',]
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display  = ('title', 'category', 'price', 'id')
+    list_display  = ('title', 'category', 'image1', 'price', 'id')
     search_fields = ['name',]
 
 # Register your models here.

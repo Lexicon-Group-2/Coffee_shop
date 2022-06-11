@@ -77,6 +77,12 @@ body {
   border-radius: 5px;
 }
 
+.product-card-container {
+  display: grid;
+  margin: auto;
+  grid-template-columns: repeat(3, 25%);
+  gap: 25px;
+}
 
 .store-category {
   display: flex;
@@ -112,29 +118,77 @@ body {
 }
 
 .product {
-  flex: 1 1 25%; /*grow | shrink | basis */
-  width: 30%;
+  width: 250px;
+  margin: 25px;
+  border-radius: 10px;
+  border: 2px solid rgb(171, 168, 168);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2),
+  -5px 5px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
 }
 
-.product img {
-  width: 100px;
-}
-
-.product-beans img {
-  height: 100%;
+.product:hover {
+  transform: scale(1.02);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3),
+  -5px 5px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
 }
 
 .imgwrap {
-  height: 150px;
+  position: relative;
+  padding: 15px;
+  width: 250px;
+  height: 250px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: all 0.5s ease;
+}
+
+.imgwrap img {
   width: 100%;
+  height: 100%;
+}
+
+.imgwrap .heart-btn {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.card-title {
   padding: 10px;
-  margin: auto;
+  height: 60px;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.6rem;
+  font-family: serif;
+}
+
+.card-body {
+  display: flex;
+  padding: 3px;
+  height: 60px;
+  border: 2px solid rgb(171, 168, 168);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.card-price {
+  font-size: 2.2rem;
+  width: 60%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.add-to-cart-btn {
+  width: auto;
 }
 
 
 .signup-message {
   position: fixed;
-
   background: rgba(0, 0, 0, 0.5);
   min-height: 100vh;
   width: 100%;
@@ -251,7 +305,7 @@ p::first-letter {
   color: brown;
   font-size: xx-large;
 }
-.btn {
+/* .btn {
   position: relative;
   padding: 1.4rem 4.2rem;
   padding-right: 3.1rem;
@@ -284,7 +338,7 @@ p::first-letter {
 .btn:hover:after {
   background: var(--inv);
   transition-delay: 0.35s;
-}
+} */
 /* From center */
 
 .from-center:before {

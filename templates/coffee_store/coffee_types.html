@@ -1,36 +1,17 @@
 {% extends "main/base.html" %}
 
 {% block body_block %}
-<div class="row">
-  <div class="col-md-8">
-    <a href="{% url 'home' %}"><i class="fa fa-home"></i></a>
-    <span class="url-arrow">{{arrow|safe}}</span>
-    <a href="{% url 'store' %}"><span class="url-text">Store</span></a>
-    <span class="url-arrow">{{arrow|safe}}</span>
-    <a href="{% url 'coffee_types' %}"><span class="url-text">Coffee types</span></a>
+  <div class="row">
+    <div class="col-md-8">
+      <a href="{% url 'home' %}"><i class="fa fa-home"></i></a>
+      <span class="url-arrow">{{arrow|safe}}</span>
+      <a href="{% url 'store' %}"><span class="url-text">Store</span></a>
+      <span class="url-arrow">{{arrow|safe}}</span>
+      <a href="{% url 'coffee_types' %}"><span class="url-text">Coffee types</span></a>
+    </div>
   </div>
-</div>
 
   <h1>Coffee types</h1>
 
-<ul> Sort by:
-  <li class="filters"><a class="btn btn-outline-secondary" href="?sort=low-to-high">Price: low to high</a></li>
-  <li class="filters"><a class="btn btn-outline-secondary" href="?sort=high-to-low">Price: high to low</a></li>
-  <li class="filters"><a class="btn btn-outline-secondary" href="?sort=alpha">Alphabeticaly</a></li>
-</ul>
-<div class="product-container">
-  {% for product in products %}
-    <div class="card col-md-4 m-3 product product-beans">
-      <div class="imgwrap">
-        <img width="70" src="{{product.image1.url}}" class="card-img-top" alt="">
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">{{product.title}}</h5>
-        <h3>Price: {{product.price}}kr</h3>
-        <a href="" class="btn btn-outline-secondary">Add to cart</a>
-      </div>
-    </div>
-  {% endfor %}
-</div>
-
+  {% include 'coffee_store/product_card.html' %}
 {% endblock %}

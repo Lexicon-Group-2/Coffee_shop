@@ -1,0 +1,35 @@
+<ul> Sort by:
+  <li class="filters"><a class="btn btn-outline-secondary" href="?sort=low-to-high">Price: low to high</a></li>
+  <li class="filters"><a class="btn btn-outline-secondary" href="?sort=high-to-low">Price: high to low</a></li>
+  <li class="filters"><a class="btn btn-outline-secondary" href="?sort=alpha">Alphabeticaly</a></li>
+</ul>
+
+<div class="product-container">
+  {% for product in products %}
+    <div class="product">
+      <div class="imgwrap">
+        <img src="{{product.image1.url}}">
+        <a href="">
+          <img class="heart-btn" src="/media/heart_outline.png" alt="">
+        </a>
+      </div>
+      <div class="card-title">{{product.title}}</div>
+      <div class="card-body">
+        <div class="card-price">{{product.price}}:-</div>
+        <a href="" class="btn btn-success add-to-cart-btn">
+          <i class="fas fa-shopping-cart"></i>Add to Cart
+        </a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<script>
+  var btns = document.getElementsByClassName('heart-btn')
+
+  for (let btn of btns) {
+    btn.addEventListener('click', () => {
+      btn.src = "/media/heart_full.png"
+    })
+  }
+</script>

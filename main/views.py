@@ -21,11 +21,6 @@ def number_of_messages(request):
     return num_items
 
 
-def index(request):
-  return render(request, 'main/index.html', {})
-
-
-
 def signup(request):
   registered = False
 
@@ -61,8 +56,6 @@ def signup(request):
 
   return render(request, 'main/signup.html', context)
 
-
-
 def user_login(request):
   if request.method == 'POST':
     username = request.POST.get('username')
@@ -88,10 +81,11 @@ def user_logout(request):
   logout(request)
   return render(request, 'main/logout.html', {})
 
-
 def user(request):
   return render(request, 'main/user.html', {})
 
 def home(request): 
-  return render(request,'main/homepage.html',{})
+  return render(request, 'main/homepage.html',{})
 
+def index(request):
+  return render(request, 'main/index.html', {})
