@@ -1,61 +1,48 @@
-<nav class="navbar navbar-expand-lg navbar-secondary bg-secondary">
-  <a class="navbar-brand nav-link ms-5" href="{% url 'index' %}">Logo img</a>
-  <div class="collapse navbar-collapse container-fluid" id="navbarSupportedContent">
-    
-    <div>
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="logout nav-link" href="{% url 'store' %}">Store</i>
-          </a>
-        </li>
-        {% if user.is_superuser %}
-          <li class="nav-item">
-            <a class="logout nav-link" href="{% url 'admin:index' %}">Admin</a>
-          </li>
-        {% endif %}
-      </ul>
-    </div>
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <title> navbar page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="main1.css">
+    </head>
 
-    <div>
-      <ul class="navbar-nav mr-auto">
-      {% if user.is_authenticated %}
-        <li class="nav-item">
-          <span class="navbar-tex"></span>
-        </li>
-        <li class="nav-item">
-          <a class="logout username nav-link" href="{% url 'favourite' %}">
-            <img class="cart-img" src="{{favorite_items_image}}" alt="">
-          </a>
-          <div id="favourite-total">{{favorite_items}}</div>
-        </li>
-        <li class="nav-item">
-          <a class="logout username nav-link" href="{% url 'user' %}">
-            <i class='fas fa-user-alt'></i>
-            {{user.username}}</a>
-        </li>
-        <li class="nav-item">
-          <a class="logout nav-link" href="{% url 'logout' %}">
-            <i class='fas fa-sign-out-alt'></i>
-          </a>
-        </li>
-      {% else %}
-        <li class="nav-item">
-          <a class="logout nav-link" href="{% url 'signup' %}">Signup</a>
-        </li>
-        <li class="nav-item">
-          <a class="logout nav-link" href="{% url 'login' %}">Login</a></li>
-        </li>
-      {% endif %}
-        <li class="nav-item">
-          <a class="logout nav-link" href="{% url 'cart' %}"><img class="cart-img" src="/media/cart_not_empty.png" alt="">
-          </a>
-          <div id="cart-total">{{num_items}}</div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
 
-<!-- Shoping cart downloaded from
-https://www.flaticon.com/premium-icon/shopping-cart_2543206?related_id=2543378&origin=search
--->
+    <body> -->
+        
+
+        <div class="navbar">
+            <div class="logo">
+                <a class="active" href="{% url 'index' %}"><img src="/media/coffee-bean.png" width="150px">Fika Shop</a>
+                
+
+            </div> 
+            <nav>
+                <ul id="MenuItems">
+                    
+                    <li> <a class="active" href="{% url 'store' %}"><img src="/media/store.png"> Store</a></li>
+                    {% if user.is_superuser %}
+                    <li><a class="active" href="{% url 'admin:index' %}"><img src="/media/admin.png"> Admin</a></li>
+                    {% endif %}
+                    
+                    {% if user.is_authenticated %}
+
+                    <li><a class="active" href="{% url 'wish_list' %}"><img src="/media/wish_list.png" class="cart-img"></a></li>
+                    <li><a class="active" href="{% url 'user' %}"><img src="/media/user.png">{{ user.username }}</a></li>
+                    <li><a class="active" href="{% url 'logout' %}"><img src="/media/logout1.png"> Logout</a></li>
+                    {% else %}
+
+                    <li><a class="active" href="{% url 'signup' %}"><img src="/media/register.jpg"> Signup</a></li>
+                    <li><a class="active" href="{% url 'login' %}"><img src="/media/login.png"> Login</a></li>
+                    {% endif %}
+                    <li><a class="active" href="{% url 'cart' %}"><img src="/media/cart.png"></a></li>
+
+                </ul>
+            </nav>
+            <div class="menu-icon">
+                <img src="/media/menu1.png" class="menu-icon" onclick="menutoggle()">
+            </div>
+        </div>
+<!--     </body>
+</html> 
+ -->
