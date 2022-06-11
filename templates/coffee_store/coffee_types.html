@@ -7,11 +7,10 @@
       <span class="url-arrow">{{arrow|safe}}</span>
       <a href="{% url 'store' %}"><span class="url-text">Store</span></a>
       <span class="url-arrow">{{arrow|safe}}</span>
-      <a href="{% url 'coffee_types' %}"><span class="url-text">Coffee types</span></a>
+      <a href="{% url 'coffee_types' %}"><span class="url-text">{{category}}</span></a>
     </div>
   </div>
-
-  <h1>Coffee types</h1>
-
+  
   {% include 'coffee_store/product_card.html' %}
+
 {% endblock %}

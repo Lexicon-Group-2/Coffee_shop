@@ -19,19 +19,18 @@ def sort_items(request, products):
 def prod_dict(request, category):
   products = Product.objects.filter( category__name__contains=category )
   products = sort_items(request, products)
-  return {'products' : products}
+  return {'products' : products, 'category' : category}
 
 
 def store(request):
-  context = {}
-  return render(request, 'coffee_store/store.html', context)
+  return render(request, 'coffee_store/store.html', {})
 
 def coffee_machines(request):
   context = prod_dict(request, "Coffee machines")
   return render(request, 'coffee_store/coffee_machines.html', context)
 
 def coffee_types(request):
-  context = prod_dict(request, "Coffee Beans")
+  context = prod_dict(request, "Coffee beans")
   return render(request, 'coffee_store/coffee_types.html', context)
 
 def coffee_mugs(request):
@@ -39,7 +38,8 @@ def coffee_mugs(request):
   return render(request, 'coffee_store/coffee_mugs.html', context)
 
 def other_accessories(request):
-  return render(request, 'coffee_store/other_accessories.html', {})
+  context = prod_dict(request, "Coffee Accessories")
+  return render(request, 'coffee_store/other_accessories.html', context)
 
 def cart(request):
   context = {}
