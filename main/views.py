@@ -68,7 +68,7 @@ def user_login(request):
     if user:
       if user.is_active:
         login(request, user)
-        return HttpResponseRedirect(reverse('home'))
+        return HttpResponseRedirect(reverse('index'))
       else:
         return HttpResponse("Account not active")
     else:
@@ -84,8 +84,11 @@ def user_logout(request):
 def user(request):
   return render(request, 'main/user.html', {})
 
+# welcome page
+def index(request):
+  return render(request, 'main/index.html', {})
+
 def home(request): 
   return render(request, 'main/homepage.html',{})
 
-def index(request):
-  return render(request, 'main/index.html', {})
+
