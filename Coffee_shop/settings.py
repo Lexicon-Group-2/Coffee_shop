@@ -71,6 +71,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'main.context_processors.items_processor',
                 'main.context_processors.arrow',
+                'main.context_processors.favorite_items',
             ],
             'libraries' : {
                 'staticfiles': 'django.templatetags.static', 
