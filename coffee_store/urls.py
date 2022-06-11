@@ -9,7 +9,8 @@ urlpatterns = [
     path('store/other_accessories', views.other_accessories, name='other_accessories'),
     path('cart/', views.cart, name='cart'),
     path('checkout/', views.checkout, name='checkout'),
-    
+    path('favourite/', views.wish_list, name="favourite"),
+    path('favourite/<int:id>/', views.add_to_favourite, name="add_to_favourite"),
 ]
 
 

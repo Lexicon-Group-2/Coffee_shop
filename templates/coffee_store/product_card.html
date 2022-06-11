@@ -15,10 +15,11 @@
 
 <div class="product-container">
   {% for product in products %}
+    <h1>{{product.favourites}}</h1>
     <div class="product">
       <div class="imgwrap">
         <img src="{{product.image1.url}}">
-        <a href="#">
+        <a href="{% url 'add_to_favourite' product.id %}">
           <img class="heart-btn" src="/media/heart_outline.png" alt="">
         </a>
       </div>

@@ -1,0 +1,27 @@
+{% extends "main/base.html" %}
+
+{% block body_block %}
+  <h1>Wish List</h1>
+
+  <div class="product-container">
+    {% for product in products %}
+      <div class="product">
+        <div class="imgwrap">
+          <img src="{{product.image1.url}}">
+          <a href="{% url 'add_to_favourite' product.id %}">
+            <img class="heart-btn" src="/media/heart_full.png" alt="">
+          </a>
+        </div>
+        <div class="card-title">{{product.title}}</div>
+        <div class="card-body">
+          <div class="card-price">{{product.price}}:-</div>
+          <a href="" class="btn btn-success add-to-cart-btn">
+            <i class="fas fa-shopping-cart"></i>Add to Cart
+          </a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+
+{% endblock %}

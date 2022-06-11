@@ -47,3 +47,19 @@ def cart(request):
 
 def checkout(request):
   return render(request, 'coffee_store/checkout.html', {})
+
+
+def wish_list(request):
+  products = Product.objects.filter(favourites=request.user)
+  return render(request, 'coffee_store/wish_list.html', {'products': products})
+
+
+@login_required
+def add_to_favourite(request, id):
+  item = get_object_or_404(Product, id=id)
+  print(item.title, item.price)
+  if item.favourites.filter(id=request.user.id).exists():
+    item.favourites.remove(request.user)
+  else:
+    item.favourites.add(request.user)
+  return HttpResponseRedirect(request.META['HTTP_REFERER'])
