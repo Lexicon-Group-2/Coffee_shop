@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'bootstrap5',
     'widget_tweaks',
     'formtags',
-    'main'
+    'main',
+    'coffee_store',
 ]
 
 MIDDLEWARE = [
@@ -68,6 +69,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'main.context_processors.items_processor',
+                'main.context_processors.arrow',
+                'main.context_processors.favorite_items',
             ],
             'libraries' : {
                 'staticfiles': 'django.templatetags.static', 

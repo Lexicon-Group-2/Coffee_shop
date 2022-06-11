@@ -1,0 +1,29 @@
+{% extends "main/base.html" %}
+
+{% block body_block %}
+  <h1>Store page</h1>
+
+  <h3>Perhaps something like this</h3>
+  <h4>This is only to have valid urls, you can change names of the links.</h4>
+  <h4>The style is within static/css/main.css, go there and implement your own...</h4>
+
+<div class="product-container">
+  
+  <div class="card col-md-2 m-3 category-container">
+    <img src="/media/category_images/coffee_machines.jpg" alt="">
+    <a href="{% url 'coffee_machines' %}" class="btn btn-outline-secondary">Coffee Machines</a>
+  </div>
+  <div class="card col-md-2 m-3 category-container">
+    <img src="/media/category_images/coffee_beans.jpg" alt="">
+    <a href="{% url 'coffee_types' %}" class="btn btn-outline-secondary">Coffee Beans</a>
+  </div>
+  <div class="card col-md-2 m-3 category-container">
+    <img src="/media/category_images/coffee_mugs.jpg" alt="">
+    <a href="{% url 'coffee_mugs' %}" class="btn btn-outline-secondary">Coffee Mugs</a>
+  </div>
+  <div class="card col-md-2 m-3 category-container">
+    <img src="/media/category_images/accessories.jpg" alt="">
+    <a href="{% url 'other_accessories' %}" class="btn btn-outline-secondary">Accessories</a>
+  </div>
+</div>
+{% endblock %}

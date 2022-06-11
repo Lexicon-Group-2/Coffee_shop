@@ -3,3 +3,4 @@ django-bootstrap-v5
 argon2-cffi
 django-widget_tweaks
 django-formtags
+Pillow

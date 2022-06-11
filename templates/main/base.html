@@ -6,13 +6,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!-- Load the bootstrap CSS -->
   {% load bootstrap5 %}
   
   <!-- Display django.contrib.messages as Bootstrap alerts -->
   {% bootstrap_messages %}
-
+  
   <!-- Load favicon to remove some console errors -->
   <link rel="icon" href="/media/favicon.ico">
 
@@ -42,7 +42,10 @@
     
     {% endblock %}
   </div>
+
+  {% block footer_block %}
   
+  {% endblock %}
   <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

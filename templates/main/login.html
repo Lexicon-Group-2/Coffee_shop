@@ -1,32 +1,55 @@
-{% extends "main/base.html" %}
-{% load staticfiles %}
-
-{% block head_block %}
-
-{% endblock %}
-
-{% block body_block %}
-
-  <div class="signup-form">
-    <h3>Login</h3>
+{% extends "main/base.html" %} {% load staticfiles %} {% block body_block %}
+<div class="wrapper">
+  <div class="inner">
     <form method="POST" enctype="multipart/form-data">
       {% csrf_token %}
+      <h3>Login</h3>
 
-      <label class="form-label" for="username">Username:</label>
-      <input class="form-control mb-2" type="text" name="username" placeholder="Username"/>
+      <div class="form-wrapper">
+        <label for="username">User name</label>
+        <input
+          type="text"
+          class="form-control"
+          required
+          type="text"
+          name="username"
+          placeholder="Username"
+        />
+      </div>
 
-      <label class="form-label" for="password">Password:</label>
-      <input autocomplete="current-password" class="form-control" type="password" name="password" type="password" placeholder="Password" id="id_password" data-toggle="password"/><i class="far fa-eye" id="togglePassword" style="margin-left: 380px; cursor: pointer; transform: translateY(-30px);">
-      </i>
+      <div class="form-wrapper">
+        <label for="">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          placeholder="Password"
+          id="id_password"
+          data-toggle="password"
+        />
+        <i
+          class="far fa-eye"
+          id="togglePassword"
+          style="
+            margin-left: 280px;
+            cursor: pointer;
+            transform: translateY(-30px);
+          "
+        >
+        </i>
+      </div>
+      <div class="checkbox">
+        <label>
+          Do not have an account? <a href="{% url 'signup' %}">Click here</a> to
+          create one.
+        </label>
+      </div>
 
-      <h4>Do not have an account? <a href="{% url 'signup' %}">Click here</a> to create one.</h4>
-
-      <input class="btn btn-secondary btn-block" type="submit" name="submit" value="Login">
+      <button type="submit" name="submit">Login</button>
     </form>
   </div>
+</div>
 
-
-  <script src="{% static 'js/showPassword.js' %}"></script>
+<script src="{% static 'js/showPassword.js' %}"></script>
 
 {% endblock %}
-

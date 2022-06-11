@@ -12,9 +12,13 @@ from main.models import Profile
 User._meta.get_field('email')._unique = True
 
 
-def index(request):
-  return render(request, 'main/index.html', {})
+from django import template
 
+register = template.Library()
+@register.simple_tag
+def number_of_messages(request):
+    num_items = 80
+    return num_items
 
 
 def signup(request):
@@ -52,8 +56,6 @@ def signup(request):
 
   return render(request, 'main/signup.html', context)
 
-
-
 def user_login(request):
   if request.method == 'POST':
     username = request.POST.get('username')
@@ -66,7 +68,7 @@ def user_login(request):
     if user:
       if user.is_active:
         login(request, user)
-        return HttpResponseRedirect(reverse('home'))
+        return HttpResponseRedirect(reverse('index'))
       else:
         return HttpResponse("Account not active")
     else:
@@ -79,7 +81,14 @@ def user_logout(request):
   logout(request)
   return render(request, 'main/logout.html', {})
 
-
 def user(request):
   return render(request, 'main/user.html', {})
+
+# welcome page
+def index(request):
+  return render(request, 'main/index.html', {})
+
+def home(request): 
+  return render(request, 'main/homepage.html',{})
+
 

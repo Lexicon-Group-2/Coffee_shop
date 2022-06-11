@@ -1,0 +1,16 @@
+{% extends "main/base.html" %}
+
+{% block body_block %}
+  <div class="row">
+    <div class="col-md-8">
+      <a href="{% url 'home' %}"><i class="fa fa-home"></i></a>
+      <span class="url-arrow">{{arrow|safe}}</span>
+      <a href="{% url 'store' %}"><span class="url-text">Store</span></a>
+      <span class="url-arrow">{{arrow|safe}}</span>
+      <a href="{% url 'coffee_machines' %}"><span class="url-text">{{category}}</span></a>
+    </div>
+  </div>
+  
+  {% include 'coffee_store/product_card.html' %}
+
+{% endblock %}
