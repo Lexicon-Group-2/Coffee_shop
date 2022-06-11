@@ -65,6 +65,17 @@ body {
   font-size: 14px;
 }
 
+#favourite-total {
+  display: block;
+  position: absolute;
+  top: 30px;
+  right: 13px;
+  text-align: center;
+  color: #fff;
+  width: 22px;
+  height: 22px;
+  font-size: 14px;
+}
 
 /* CSS for category buttons in the store page */
 .category-container {

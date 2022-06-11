@@ -19,7 +19,7 @@ def arrow(request):
 def favorite_items(request):
     favorite_items = 0
     image = "/media/wish_list_empty.png"
-    if request.user.id:
+    if request.user.is_authenticated:
         products = Product.objects.filter(favourites=request.user)
         favorite_items = len(products)
         if favorite_items == 0:

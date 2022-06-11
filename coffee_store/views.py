@@ -19,7 +19,14 @@ def sort_items(request, products):
 def prod_dict(request, category):
   products = Product.objects.filter( category__name__contains=category )
   products = sort_items(request, products)
-  return {'products' : products, 'category' : category}
+
+  liked = [i.id for i in products.filter(favourites=request.user).iterator()]
+  context = {
+        'products' : products,
+        'category' : category,
+        'favourites' : liked,
+  }
+  return context
 
 
 def store(request):
@@ -52,13 +59,13 @@ def checkout(request):
 
 def wish_list(request):
   products = Product.objects.filter(favourites=request.user)
-  return render(request, 'coffee_store/wish_list.html', {'products': products})
+  context = {'products': products}
+  return render(request, 'coffee_store/wish_list.html', context)
 
 
 @login_required
 def add_to_favourite(request, id):
   item = get_object_or_404(Product, id=id)
-  print(item.title, item.price)
   if item.favourites.filter(id=request.user.id).exists():
     item.favourites.remove(request.user)
   else:

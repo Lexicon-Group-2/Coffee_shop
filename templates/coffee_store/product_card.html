@@ -23,7 +23,11 @@
     <div class="imgwrap">
       <img src="{{product.image1.url}}" />
       <a href="{% url 'add_to_favourite' product.id %}">
-        <img class="heart-btn" src="/media/heart_outline.png" alt="" />
+        {% if product.id in favourites %}
+          <img class="heart-btn" src="/media/heart_full.png" alt="" />
+        {% else %}
+          <img class="heart-btn" src="/media/heart_outline.png" alt="" />
+        {% endif %}
       </a>
     </div>
     <div class="card-title">{{product.title}}</div>
