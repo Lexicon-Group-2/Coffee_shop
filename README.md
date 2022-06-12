@@ -22,8 +22,8 @@ This app will contain all the logic regarding:
 ### **navbar.html**
 
 - [ ] Aply some css to the navbar.
-- [ ] This file is in the folder templates/main/navbar.html.
-- [ ] Should navbar contain signup url once the person is loged in. In the current stage of the project it is not implemente. However, we have a link within login page...
+- [x] This file is in the folder templates/main/navbar.html.
+- [ ] Should navbar contain signup url once the person is loged in. In the current stage of the project it is not implemented. However, we have a link within login page...
 - [ ] Optionally, add a search button to the navabr. It should render all the products...
 
 ### **login.html**
@@ -55,29 +55,29 @@ This app will contain all the logic regarding:
 ### **store.html**
 
 - [ ] Decide what content this page should have.
-- [ ] In principle it should contain all the products within our shop.
-- [ ] If we decide to categorize products, for instance types of coffee, type of coffee machines, accesories and so on, then in the store.html file should have small cards and on click it will navigate to a certain category.
-- [ ] Categories should perhaps also be visible in the store page.
+- [x] In principle it should contain all the products within our shop.
+- [x] If we decide to categorize products, for instance types of coffee, type of coffee machines, accesories and so on, then in the store.html file should have small cards and on click it will navigate to a certain category.
+- [x] Categories should perhaps also be visible in the store page.
 
 ### **product_list.card**
 
-- [ ] The easiest way is to make a simple html file with only product card and it's own css within head section.
-- [ ] Later we can take the css part into our static files to make it clean.
-- [ ] The product card should contain:
-  - [ ] a product image (include any image just to make it work, it doesn't have to be done using django, just plain html),
-  - [ ] Add to cart button,
-  - [ ] heart button to add to the wish list,
-  - [ ] price,
-  - [ ] title,
+- [x] The easiest way is to make a simple html file with only product card and it's own css within head section.
+- [x] Later we can take the css part into our static files to make it clean.
+- [x] The product card should contain:
+  - [x] a product image,
+  - [x] Add to cart button,
+  - [x] heart button to add to the wish list,
+  - [x] price,
+  - [x] title,
   - [ ] very short description.
-- [ ] For any of the above mentioned things use plain html and just do the styling. Later on we will connect it with django and python.
+- [x] For any of the above mentioned things use plain html and just do the styling. Later on we will connect it with django and python.
 
 ### **Products**
 
 - [ ] Similar to our Blog project, as Sara suggested, we can add reviews and a loged in user can make a review/comment about each product.
 - [ ] In previous case, reviews/comments should be visible at the bottom of each product file.
-- [ ] Decide about the look for a product card. This will be written only once and a simple for loop will render same things for all the products in our db. Google is our friend, simply google for "product card" and see what you like.
-- [ ] This card should have something like heart, as Sara added, so that user can put an item into a wish list.
+- [x] Decide about the look for a product card. This will be written only once and a simple for loop will render same things for all the products in our db. Google is our friend, simply google for "product card" and see what you like.
+- [x] This card should have something like heart, as Sara added, so that user can put an item into a wish list.
 
 ### **cart.html**
 
@@ -86,14 +86,14 @@ This app will contain all the logic regarding:
 
 ### **wish_list.html**
 
-- [ ] This file should contain all the items that user have put into the wish list.
-- [ ] Items should be rendered either as table rows or as products in our store within product card.
-- [ ] User should be able to add them to the card.
-- [ ] Once they are added to the cart, decide weather we should keep them in the list or not, probably yes so it makes another order easier.
+- [x] This file should contain all the items that user have put into the wish list.
+- [x] Items should be rendered either as table rows or as products in our store within product card.
+- [x] User should be able to add them to the card.
+- [x] Once they are added to the cart, decide weather we should keep them in the list or not, probably yes so it makes another order easier.
 
 # Some python logic
 
 ### **storeApp/\*.py**
 
-- [ ] Write some viewes and urls for the logic regarding the store app.
+- [x] Write some viewes and urls for the logic regarding the store app.
 - [ ] More details about this will write later.
