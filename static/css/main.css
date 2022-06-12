@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Allura:200,300,400,500,600,700,800,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Lora');
+@import url('https://fonts.googleapis.com/css?family=Barlow');
+
 * {
   padding: 0;
   margin: 0;
@@ -77,6 +85,7 @@ body {
   font-size: 14px;
 }
 
+
 /* CSS for category buttons in the store page */
 .category-container {
   border-radius: 5px;
@@ -139,7 +148,7 @@ body {
 }
 
 .product:hover {
-  transform: scale(1.02);
+  transform: scale(1.01);
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3),
   -5px 5px 20px rgba(0, 0, 0, 0.3);
   transition: all 0.2s ease;
@@ -168,35 +177,52 @@ body {
   right: 10px;
 }
 
-.card-title {
+.card-title-custom {
+  font-family: 'Raleway';
+  font-family: 'Lora';
+  font-family: 'Barlow';
   padding: 10px;
   height: 60px;
   font-weight: 600;
   font-size: 1.5rem;
   line-height: 1.6rem;
-  font-family: serif;
 }
 
-.card-body {
+.card-body-custom {
   display: flex;
-  padding: 3px;
+  padding: 0px;
   height: 60px;
   border: 2px solid rgb(171, 168, 168);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
 
-.card-price {
-  font-size: 2.2rem;
-  width: 60%;
+.card-price-custom {
+  font-family: 'Allura';
+  /* font-family: 'Barlow'; */
+  font-size: 2.6rem;
+  width: 74%;
+  margin: 3px;
   text-align: center;
   font-weight: bold;
+  text-shadow: 4px 4px 4px #828282;
 }
 
 .add-to-cart-btn {
   width: auto;
+  border: none;
+  border-bottom-right-radius: 12px;
 }
 
+.add-to-cart-btn:hover {
+  background: palegreen;
+  background: black;
+}
+
+.add-to-cart-img {
+  width: 45px;
+  transform: translateY(3px);
+}
 
 .signup-message {
   position: fixed;

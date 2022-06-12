@@ -48,20 +48,10 @@ def other_accessories(request):
   context = prod_dict(request, "Coffee Accessories")
   return render(request, 'coffee_store/other_accessories.html', context)
 
-def cart(request):
-  context = {}
-  return render(request, 'coffee_store/cart.html', context)
-
-
-def checkout(request):
-  return render(request, 'coffee_store/checkout.html', {})
-
-
 def wish_list(request):
   products = Product.objects.filter(favourites=request.user)
   context = {'products': products}
   return render(request, 'coffee_store/wish_list.html', context)
-
 
 @login_required
 def add_to_favourite(request, id):

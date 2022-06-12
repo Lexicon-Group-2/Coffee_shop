@@ -2,7 +2,7 @@
 
 {% block body_block %}
   <h1>Wish List</h1>
-
+  
   <div class="product-container">
     {% for product in products %}
       <div class="product">
@@ -12,11 +12,11 @@
             <img class="heart-btn" src="/media/heart_full.png" alt="">
           </a>
         </div>
-        <div class="card-title">{{product.title}}</div>
-        <div class="card-body">
-          <div class="card-price">{{product.price}}:-</div>
-          <a href="" class="btn btn-success add-to-cart-btn">
-            <i class="fas fa-shopping-cart"></i>Add to Cart
+        <div class="card-title-custom">{{product.title}}</div>
+        <div class="card-body-custom">
+          <div class="card-price-custom">{{product.price}}:-</div>
+          <a href="" class="btn btn-outline-success add-to-cart-btn">
+            <img class="cart-img add-to-cart-img" src="/media/add_to_cart.png" alt=""/>
           </a>
         </div>
       </div>

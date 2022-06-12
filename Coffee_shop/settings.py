@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'formtags',
     'main',
     'coffee_store',
+    'shopping_cart',
 ]
 
 MIDDLEWARE = [

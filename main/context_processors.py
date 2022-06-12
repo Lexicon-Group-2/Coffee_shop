@@ -1,9 +1,15 @@
 from coffee_store.models import Product
+from shopping_cart.models import Order
 
 # This will be updated once we have our db
 def items_processor(request):
     if request.user.is_authenticated:
-        num_items = 80
+        try:
+            customer = request.user.customer
+            order, created = Order.objects.get_or_create(customer=customer, completed=False)
+            num_items = order.get_cart_items
+        except:
+            num_items = 0
     else:
         num_items = 0
     return {
