@@ -8,13 +8,12 @@
 body {
   background: #f4f4f4;
 }
-.container {
+/* .container {
   max-width: 1300px;
   margin: auto;
   padding-left: 30px;
-  padding-right: 30px;
-
-}
+  padding-right: 30px; 
+} */
 /* images control in navbar*/
 nav img {
   width: 50px;
