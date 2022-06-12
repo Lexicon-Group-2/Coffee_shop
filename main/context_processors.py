@@ -3,6 +3,7 @@ from shopping_cart.models import Order
 
 # This will be updated once we have our db
 def items_processor(request):
+    order = ""
     if request.user.is_authenticated:
         try:
             customer = request.user.customer

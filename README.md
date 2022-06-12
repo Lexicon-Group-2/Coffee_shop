@@ -81,8 +81,9 @@ This app will contain all the logic regarding:
 
 ### **cart.html**
 
-- [ ] This file should contain all the items that person have put into the cart.
-- [ ] It should also contain checkout button wich will on click redirect to another page.
+- [x] This file should contain all the items that person have put into the cart.
+- [x] It should also contain checkout button wich will on click redirect to another page.
+- [ ] Apply some css for each product box. Template info are already in the page, have a look.
 
 ### **wish_list.html**
 
