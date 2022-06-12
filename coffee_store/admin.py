@@ -8,7 +8,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 class ProductAdmin(admin.ModelAdmin):
     list_display  = ('title', 'category', 'image1', 'price', 'id')
-    search_fields = ['name',]
+    search_fields = ['title',]
 
 # Register your models here.
 #admin.site.register(CoffeeMachine, CoffeeMachineAdmin)
