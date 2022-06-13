@@ -20,7 +20,11 @@ def prod_dict(request, category):
   products = Product.objects.filter( category__name__contains=category )
   products = sort_items(request, products)
 
-  liked = [i.id for i in products.filter(favourites=request.user).iterator()]
+  if request.user.is_authenticated:
+    liked = [i.id for i in products.filter(favourites=request.user).iterator()]
+  else:
+    liked = []
+  
   context = {
         'products' : products,
         'category' : category,
