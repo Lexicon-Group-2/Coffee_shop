@@ -20,27 +20,27 @@
             <nav>
                 <ul id="MenuItems">
                     
-                    <li> <a class="active" href="{% url 'store' %}"><img src="/media/store.png"> Store</a></li>
+                    <li> <a class="active" href="{% url 'store' %}"><img src="/media/store.png" style="width: 40px; height:50px"> Store</a></li>
                     {% if user.is_superuser %}
-                    <li><a class="active" href="{% url 'admin:index' %}"><img src="/media/admin.png"> Admin</a></li>
+                    <li><a class="active" href="{% url 'admin:index' %}"><img src="/media/admin.png" style="width: 40px; height:50px"> Admin</a></li>
                     {% endif %}
                     
                     {% if user.is_authenticated %}
 
-                    <li><a class="active" href="{% url 'wish_list' %}"><img src="/media/wish_list.png" class="cart-img"></a></li>
-                    <li><a class="active" href="{% url 'user' %}"><img src="/media/user.png">{{ user.username }}</a></li>
-                    <li><a class="active" href="{% url 'logout' %}"><img src="/media/logout1.png"> Logout</a></li>
+                    <li><a class="active" href="{% url 'wish_list' %}"><img src="/media/wish_list.png" style="width: 40px; height:50px" class="cart-img"></a></li>
+                    <li><a class="active" href="{% url 'user' %}"><img src="/media/user.png" style="width: 40px; height:50px">{{ user.username }}</a></li>
+                    <li><a class="active" href="{% url 'logout' %}"><img src="/media/logout1.png" style="width: 40px; height:50px"> Logout</a></li>
                     {% else %}
 
-                    <li><a class="active" href="{% url 'signup' %}"><img src="/media/register.jpg"> Signup</a></li>
-                    <li><a class="active" href="{% url 'login' %}"><img src="/media/login.png"> Login</a></li>
+                    <li><a class="active" href="{% url 'signup' %}"><img src="/media/register.jpg" style="width: 40px; height:50px"> Signup</a></li>
+                    <li><a class="active" href="{% url 'login' %}"><img src="/media/login.png" style="width: 40px; height:50px"> Login</a></li>
                     {% endif %}
-                    <li><a class="active" href="{% url 'cart' %}"><img src="/media/cart.png"></a></li>
+                    <li><a class="active" href="{% url 'cart' %}"><img src="/media/cart.png" style="width: 40px; height:50px"></a></li>
 
                 </ul>
             </nav>
             <div class="menu-icon">
-                <img src="/media/menu1.png" class="menu-icon" onclick="menutoggle()">
+                <img src="/media/menu1.png" style="width: 40px; height:50px" class="menu-icon" onclick="menutoggle()">
             </div>
         </div>
 <!--     </body>
