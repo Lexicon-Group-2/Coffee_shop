@@ -344,7 +344,7 @@ select option[value=""][disabled] {
   display: none;
 }
 
-button {
+.mybtn {
   border: none;
   width: 152px;
   height: 40px;
@@ -371,7 +371,7 @@ button {
   -webkit-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
-button:before {
+.mybtn:before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -391,7 +391,8 @@ button:before {
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-button:hover:before {
+
+.mybtn:hover:before {
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
   -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
@@ -459,19 +460,16 @@ button:hover:before {
 }
 
 ////home page Style
-
-.card_container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@300;400;500;600&display=swap");
+h2 {
+  font-family: "Poppins", sans-serif;
+  color: red;
 }
-.card {
-  padding: 1.3rem;
-  border: 2rem;
-  border: 1px solid transparent;
-  transition: var(--transition);
+.homepage-title {
+  margin-button: 40px;
 }
-.card__item-image img {
-  height: 200px;
-  object-fit: cover;
+.fikka_button {
+  text-decoration: none;
+  color: brown;
+  size: 40px;
 }
