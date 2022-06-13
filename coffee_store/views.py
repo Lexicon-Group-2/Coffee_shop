@@ -6,6 +6,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from main.models import Profile, User
 from .models import Product
+from shopping_cart.models import Order
 
 # this function will sort the items based on user input
 def sort_items(request, products):
@@ -22,14 +23,20 @@ def prod_dict(request, category):
 
   if request.user.is_authenticated:
     liked = [i.id for i in products.filter(favourites=request.user).iterator()]
+    customer = request.user.customer
+    order = Order.objects.get(customer=customer, completed=False).orderitem_set.all()
+    items = [i.product.id for i in order.iterator()]
   else:
     liked = []
-  
+    items = []
+    order = ""
   context = {
         'products' : products,
         'category' : category,
         'favourites' : liked,
-  }
+        'cart' : items,
+    }
+  print(items)
   return context
 
 

@@ -5,7 +5,10 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from main.models import Profile, User
-from .models import Order
+from .models import Order, OrderItem
+from coffee_store.models import Product
+from django.http import JsonResponse
+import json
 # Create your views here.
 
 def cart(request):
@@ -22,3 +25,27 @@ def cart(request):
 
 def checkout(request):
   return render(request, 'shopping_cart/checkout.html', {})
+
+
+def update_item(request):
+  data = json.loads(request.body)
+  productId = data['productId']
+  action = data['action']
+  print('Action:', action)
+  print('Product:', productId)
+
+  customer = request.user.customer
+  product = Product.objects.get(id=productId)
+  order, created = Order.objects.get_or_create(customer=customer, completed=False)
+  
+  orderItem, created = OrderItem.objects.get_or_create(order=order, product=product)
+
+  if action == 'add':
+    orderItem.quantity = (orderItem.quantity + 1)
+  elif action == 'remove':
+    orderItem.quantity = (orderItem.quantity - 1)
+  orderItem.save()
+  if orderItem.quantity <= 0:
+    orderItem.delete()
+  
+  return JsonResponse('Item updated', safe=False)

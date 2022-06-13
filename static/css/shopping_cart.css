@@ -1,0 +1,92 @@
+
+.cart-header {
+  margin: 50px 10% 0 10%;
+}
+
+
+.cart-items-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: rgb(239, 239, 239);
+}
+
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 80px 450px 50px 50px 50px 100px;
+  grid-template-rows: 30px 30px;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "shopping-cart-img shopping-cart-product-title shopping-cart-product-price arrow-up shopping-cart-product-quantity shopping-cart-product-total"
+    "shopping-cart-img shopping-cart-product-title shopping-cart-product-price arrow-down shopping-cart-product-quantity shopping-cart-product-total";
+  border: 1px solid grey;
+  border-radius: 10px;
+  font-size: 1.7rem;
+  padding: 10px;
+  margin: 15px auto 15px auto;
+  width: 800px;
+}
+
+.shopping-cart-img {
+  justify-self: center;
+  align-self: center;
+  grid-area: shopping-cart-img;
+}
+
+.shopping-cart-img img {
+  width: 70px;
+}
+
+.shopping-cart-product-title {
+  justify-self: start;
+  align-self: center;
+  grid-area: shopping-cart-product-title;
+  font-family: 'Barlow';
+  font-size: 1.5rem;
+  margin-left: 15px;
+}
+
+.shopping-cart-product-price {
+  justify-self: start;
+  align-self: center;
+  grid-area: shopping-cart-product-price;
+  font-family: 'Allura';
+  text-align: right;
+  font-weight: bold;
+  user-select: none;
+  text-shadow: 4px 4px 4px #828282;
+  transform: translateY(5px);
+}
+
+.arrow-down {
+  justify-self: center;
+  align-self: center;
+  grid-area: arrow-down;
+}
+
+.arrow-down img,
+.arrod-up img {
+  width: 15px;
+}
+
+.arrow-up {
+  justify-self: center;
+  align-self: center;
+  grid-area: arrow-up;
+}
+
+.shopping-cart-product-quantity {
+  justify-self: center;
+  align-self: center;
+  grid-area: shopping-cart-product-quantity;
+}
+
+.shopping-cart-product-total {
+  justify-self: center;
+  align-self: center;
+  grid-area: shopping-cart-product-total;
+}
+
