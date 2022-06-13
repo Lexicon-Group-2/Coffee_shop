@@ -2,18 +2,17 @@
 {% block body_block %}
 
 {% for i in products %}
-  <h1>image url: {{i.product.image1.url}}</h1>
-  <h1>title: {{i.product.title}}</h1>
-  <h1>price: {{i.product.price}}</h1>
-  <h1>quantity: {{i.quantity}}</h1>
-  <h1>quantity: {{i.get_total}}</h1>
-
+  <h3>image url: {{i.product.image1.url}}</h3>
+  <h3>title: {{i.product.title}}</h3>
+  <h3>price: {{i.product.price}}</h3>
+  <h3>quantity: {{i.quantity}}</h3>
+  <h3>price*quantity: {{i.get_total}}</h3>
   <hr>
   <hr>
 {% endfor %}
 <hr>
-<h1>Number of items: {{order.get_cart_items}}</h1>
-<h1>Total price: {{order.get_cart_total}}</h1>
+<h2>Number of items: {{order.get_cart_items}}</h2>
+<h2>Total price: {{order.get_cart_total}}</h2>
 
 <br>
 <br>
