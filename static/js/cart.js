@@ -1,45 +1,33 @@
-// please read django documentation for this part.
-  // I just copy/paste entire function from
-  // https://docs.djangoproject.com/en/3.0/ref/csrf/#ajax
-  function getToken(name) {
-    let cookieValue = null;
-    if (document.cookie && document.cookie !== '') {
-      const cookies = document.cookie.split(';');
-      for (let i = 0; i < cookies.length; i++) {
-        const cookie = cookies[i].trim();
-        // Does this cookie string begin with the name we want?
-        if (cookie.substring(0, name.length + 1) === (name + '=')) {
-          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-          break;
-        }
-      }
-    }
-    return cookieValue;
-  }
+
+var trash = document.getElementsByClassName("trash-bin-img")
+
+for (let t of trash) {
+  t.addEventListener("mouseover", () => {
+    t.src = "/media/trash_bin_hover.png"
+    t.width = "40"
+  }, false);
+  t.addEventListener("mouseleave", () => {
+    t.src = "/media/trash_bin.png"
+    t.width = "30"
+  }, false);
+}
+
 const csrftoken = getToken('csrftoken');
 
-
-console.log(user)
 var btns = document.getElementsByClassName('update-cart-btn')
-var test = document.getElementsByClassName('test-element')[0]
 
+for (let btn of btns) {
+  btn.addEventListener('click', () => {
+    var productId = btn.dataset.product
+    var action = btn.dataset.action
 
-
-
-  for (let btn of btns) {
-    btn.addEventListener('click', () => {
-      var productId = btn.dataset.product
-      var action = btn.dataset.action
-
-      if (user != 'AnonymousUser') {
-        test.innerHTML = "it works"
-        updateUserOrder(productId, action)
-      }
-    })
-  }
+    if (user != 'AnonymousUser') {
+      updateUserOrder(productId, action)
+    }
+  })
+}
 
 function updateUserOrder(productId, action) {
-  test.innerHTML = 'productId :' + productId + ', action :' + action
   var url = '/update_item/'
   
   fetch(url, {
@@ -54,7 +42,26 @@ function updateUserOrder(productId, action) {
       return response.json();
   })
   .then((data) => {
-    console.log('data: ', data)
     location.reload()
   });
+}
+
+
+// please read django documentation for this part.
+// I just copy/paste entire function from
+// https://docs.djangoproject.com/en/3.0/ref/csrf/#ajax
+function getToken(name) {
+  let cookieValue = null;
+  if (document.cookie && document.cookie !== '') {
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      // Does this cookie string begin with the name we want?
+      if (cookie.substring(0, name.length + 1) === (name + '=')) {
+        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+        break;
+      }
+    }
+  }
+  return cookieValue;
 }
