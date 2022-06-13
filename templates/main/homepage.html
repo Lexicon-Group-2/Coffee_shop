@@ -14,6 +14,7 @@
   crossorigin="anonymous"
 />
 <link rel="stylesheet" href="{% static '/static/css/main.css' %}" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
@@ -32,13 +33,13 @@
     <h1 class="text-uppercase fw-lighter">It's All about Coffee</h1>
 
     <a style="text-decoration: none" href="/" class="fikka_button">
-      <h1 class="text-center fw-bold display-1 mb-5">
+      <h1 class="text-center fw-bold display-1 mb-5" data-aos="zoom-in">
         Let's<span class="text-danger"> Fika</span>
       </h1></a
     >
   </div>
 
-  <div class="row justify-content-md-center">
+  <div class="row justify-content-md-center" data-aos="fade-up">
     <div class="col-sm-3">
       <div class="card text-center" style="width: 18rem">
         <img
@@ -47,7 +48,10 @@
           alt="..."
           style="height: 200px"
         />
-        <div class="card-body"></div>
+        <div class="card-body p-5">
+          <small> A comprehensive guide on coffee tasting</small>
+          <a href="#" class="btn btn-primary">Read more</a>
+        </div>
       </div>
     </div>
     <div class="col-sm-3">
@@ -58,7 +62,10 @@
           alt="..."
           style="height: 200px"
         />
-        <div class="card-body"></div>
+        <div class="card-body p-5">
+          <small>10 Best Coffee Beans in The World Reviews</small>
+          <a href="#" class="btn btn-primary">Read more</a>
+        </div>
       </div>
     </div>
     <div class="col-sm-3">
@@ -69,28 +76,33 @@
           alt="..."
           style="height: 200px"
         />
-        <div class="card-body"></div>
+        <div class="card-body p-5">
+          <small>4 Types of Coffee Roasts with Images</small><br />
+          <a href="#" class="btn btn-primary">Read more</a>
+        </div>
       </div>
     </div>
   </div>
+  <hr />
 
-  <div class="container-fluid my-6">
-    <h3 class="text-center mb-5">Best <span> Seller </span></h3>
+  <div class="container-fluid my-6 p-5">
+    <h3 class="text-center fw-bold mb-5">Best <span> Seller </span></h3>
 
     <div class="row">
       <div class="col-12 m-auto">
         <div class="owl-carousel owl-theme">
-          <div class="item mb-4">
+          <div class="item mb-5">
             <div class="card border-0 shadow">
               <img
                 src="/media/coffee_images/image1.jpeg"
                 alt=""
                 class="card-img-top"
-                style="height: 200px; width: 200px"
+                style="height: 150px"
               />
               <div class="card-body">
                 <div class="card-title text-center">
-                  <h4>Esspresso Machine</h4>
+                  <h4>Espresso Machine</h4>
+                  <small class="star">★★★✰✰</small>
                 </div>
               </div>
             </div>
@@ -100,13 +112,14 @@
             <div class="card border-0 shadow">
               <img
                 src="/media/coffee_images/coffee2.jpeg"
-                style="height: 200px"
+                style="height: 150px"
                 alt=""
                 class="card-img-top"
               />
               <div class="card-body">
                 <div class="card-title text-center">
                   <h4>Next 2 machines</h4>
+                  <small class="star">★★★★✰</small>
                 </div>
               </div>
             </div>
@@ -115,13 +128,14 @@
             <div class="card border-0 shadow">
               <img
                 src="/media/coffee_images/coffee3.jpeg"
-                style="height: 200px"
+                style="height: 150px"
                 alt=""
                 class="card-img-top"
               />
               <div class="card-body">
                 <div class="card-title text-center">
                   <h4>New levelup</h4>
+                  <small class="star">★★★★✰</small>
                 </div>
               </div>
             </div>
@@ -130,13 +144,14 @@
             <div class="card border-0 shadow">
               <img
                 src="/media/coffee_images/coffee4.jpeg"
-                style="height: 200px"
+                style="height: 150px"
                 alt=""
                 class="card-img-top"
               />
               <div class="card-body">
                 <div class="card-title text-center">
-                  <h4>Owl Carousel</h4>
+                  <h4>Next 1 coffee</h4>
+                  <small class="star">★★★✰✰</small>
                 </div>
               </div>
             </div>
@@ -144,41 +159,71 @@
         </div>
       </div>
     </div>
+
+    <br />
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-5" data-aos="fade-right">
+          <img style="height: 500px" src="/media/images/about-me.jpg" />
+        </div>
+        <div class="col" data-aos="fade-left">
+          <h3>About us</h3>
+          <p class="p-5 lh-lg">
+            Therefore, we blog daily, and constantly try to up our game by
+            following other blogs, news, and YouTubers. Right now we publish
+            multiple pieces each week. We’re also looking to start a YouTube
+            channel shortly where we show you how to do different types of
+            brewing, test different subscriptions and so much more. You can
+            enjoy your fika and select your favorite coffee beans with us We’re
+            always up for a coffee discussion, and you can reach out to us at
+            any time through our contact details.
+            <small>info@fikashop.com</small>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: 15,
+        nav: false,
+        autoplay: true,
+        autoplayTimeout: 2000,
+        autoplayHoverPause: true,
+        responsive: {
+          0: {
+            items: 1,
+          },
+          600: {
+            items: 2,
+          },
+          1000: {
+            items: 3,
+          },
+        },
+
+        dots: false,
+      });
+    </script>
   </div>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-  <!-- Option 1: Bootstrap Bundle with Popper -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-    crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-    crossorigin="anonymous"
-  ></script>
   <script>
-    $(".owl-carousel").owlCarousel({
-      loop: true,
-      margin: 15,
-      nav: false,
-      responsive: {
-        0: {
-          items: 1,
-        },
-        600: {
-          items: 2,
-        },
-        1000: {
-          items: 3,
-        },
-      },
-
-      dots: false,
-    });
+    AOS.init();
   </script>
+  {% endblock %}
 </div>
-
-{% endblock %}

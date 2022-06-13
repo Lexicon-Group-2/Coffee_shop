@@ -166,7 +166,7 @@ p::first-letter {
   color: brown;
   font-size: xx-large;
 }
-.btn {
+.btn_start {
   position: relative;
   padding: 1.4rem 4.2rem;
   padding-right: 3.1rem;
@@ -472,4 +472,8 @@ h2 {
   text-decoration: none;
   color: brown;
   size: 40px;
+}
+
+.star {
+  color: yellow;
 }
