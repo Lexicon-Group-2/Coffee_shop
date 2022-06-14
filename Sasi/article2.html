@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+ 
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>How to judge and choose the right coffee roast</h2>
+      <h5>Dec 17, 2020</h5>
+      <div class="fakeimg" style="height:200px;">
+        <img src="art2.jpg" alt="coffeebean" class="center" style="height: 160px;">
+      </div>
+      <p>The raw – un-roasted coffee bean is yellowish green in colour, dry and hard.
+        As the bean gets roasted, the colour starts changing to light orange and then to a light brown colour as it approached the 1st crack.
+        At around this stage, a great deal of the coffee bean’s moisture is extracted and the coffee bean can be considered light roasted.
+        As the roasting process carries on, the coffee bean gets puffed up and darker in colour. As we are approaching the 2nd crack of the coffee bean, we have entered the medium roast stage. The coffee bean is dark brown in colour & quite dry.
+        Anything after this stage is considered dark roast. The coffee bean appears to be fully puffed, very dark brown (bordering black in some instances) and oily.
+        As the roasting progresses (from light to dark), the basic elements of the coffee bean – being acidity, aroma, flavour & body – changes.</p>
+        <p><b>Arabica-</b>Arabica coffees hold the 70% of the global market’s consumption while Robusta the remaining 30%. Arabica type coffees appear to hold more sugar & oils that lead to their taste characteristics being Sweet, Fruity and Zesty Acidity
+        <p><b>Robusta –</b>Robusta coffees reveal Woody & Earthy notes with lower acidity levels.Robusta coffee trees on the other hand, grow in lower altitude, they are more resistant to pests requiring less attention from the farmer and yield higher production.</p><br>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
