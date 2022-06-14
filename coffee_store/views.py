@@ -10,7 +10,7 @@ from shopping_cart.models import Order
 
 # this function will sort the items based on user input
 def sort_items(request, products):
-  sort_by = request.GET.get("sort", "low-to-high") 
+  sort_by = request.GET.get("sort", "low-to-high")
   if sort_by == "low-to-high": products = products.order_by("price")
   if sort_by == "high-to-low": products = products.order_by("-price")
   if sort_by == "alpha":       products = products.order_by("title")
@@ -60,8 +60,20 @@ def other_accessories(request):
   return render(request, 'coffee_store/other_accessories.html', context)
 
 def wish_list(request):
-  products = Product.objects.filter(favourites=request.user)
-  context = {'products': products}
+  if request.user.is_authenticated:
+    products = Product.objects.filter(favourites=request.user)
+    liked = [i.id for i in products.filter(favourites=request.user).iterator()]
+    customer = request.user.customer
+    order = Order.objects.get(customer=customer, completed=False).orderitem_set.all()
+    items = [i.product.id for i in order.iterator()]
+  else:
+    products, liked, items = [], [], []
+    order = ""
+  
+  context = {
+        'products' : products,
+        'cart' : items,
+    }
   return render(request, 'coffee_store/wish_list.html', context)
 
 @login_required

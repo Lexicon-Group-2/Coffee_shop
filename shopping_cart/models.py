@@ -1,3 +1,6 @@
+from ctypes import addressof
+from types import CoroutineType
+from unicodedata import name
 from django.db import models
 from django.contrib.auth.models import User
 from coffee_store.models import Product
@@ -62,3 +65,10 @@ class ShippingAddress(models.Model):
   
   class Meta:
     verbose_name_plural = 'Shipping Address'
+
+
+
+
+
+
+
