@@ -102,6 +102,15 @@ body {
 .category-container {
   border-radius: 5px;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3), -5px 5px 20px rgba(0, 0, 0, 0.3);
+  transition: 0.2s all ease;
+  width: 200px;
+}
+
+.category-container:hover {
+  transform: scale(1.03);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3),
+  -5px 5px 20px rgba(0, 0, 0, 0.5);
+  transition: 0.2s all ease;
 }
 
 .category-container img {
@@ -142,8 +151,10 @@ body {
 .product-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  margin-left: 7%;
+  margin-right: 7%;
 }
 
 .product {

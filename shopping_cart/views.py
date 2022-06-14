@@ -62,7 +62,7 @@ def confirm_order(request):
   order = Order.objects.get(customer=customer, completed=False)
   order.completed = True
   order.save()
-  return render(request, 'main/index.html')
+  return render(request, 'main/homepage.html')
 
 
 def user(request):
