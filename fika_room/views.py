@@ -31,3 +31,12 @@ def fika_room(request):
   for i, img in enumerate(images):
     print(i, img)
   return render(request, 'fika_room/fika_room.html', context)
+
+def article_1(request):
+  return render(request, 'fika_room/article_1.html', {})
+  
+def article_2(request):
+  return render(request, 'fika_room/article_2.html', {})
+  
+def article_3(request):
+  return render(request, 'fika_room/article_3.html', {})

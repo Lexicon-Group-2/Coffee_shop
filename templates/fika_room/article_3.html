@@ -1,0 +1,45 @@
+{% extends "main/base.html" %}
+{% load staticfiles %}
+{% block title %}Article 3{% endblock title %}
+
+
+{% block body_block %}
+
+<link rel="stylesheet" href="{% static 'css/articles.css' %}" />
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>10 Best Coffee Beans in The World</h2>
+      <h5>Dec 27, 2021</h5>
+      <div class="fakeimg" style="height:200px;">
+        <img src="/media/art3.jpg" alt="coffeelist" class="center" style="height: 160px;">
+      </div>
+      <p>If you’re looking for a unique taste, a new roast, or a special treat, read about our top choices for the 10
+        best coffee beans. Every self-proclaimed coffee snob will have nothing less than whole coffee beans to start,
+        but for those who want the convenience of pre-ground and those who need a little caffeine in their lives, we’ve
+        got a little something for you too.</p>
+
+      <h2>The 10 Best Coffee Bean Brands in the World</h2>
+
+      <ol>
+        <li>Lifeboost Pacamara Limited Collection Coffee Beans — Best Overall
+        </li>
+        <li>Volcanica Tanzania Peaberry Coffee Beans</li>
+        <li>Koffee Kult Dark Roast Coffee Beans</li>
+        <li>Kona Gold Whole Bean Coffee</li>
+        <li>Kicking Horse Coffee Beans</li>
+        <li>Death Wish Coffee</li>
+        <li>Lavazza Super Crema Whole Bean Coffee Blend</li>
+        <li>Cafe Don Pablo Gourmet Coffee Signature Blend</li>
+        <li>Tiny Footprint Coffee Organic Nicaragua Coffee Beans</li>
+        <li>JO Organic Colombian Coffee Beans</li>
+      </ol>
+
+
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
