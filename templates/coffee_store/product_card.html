@@ -9,20 +9,21 @@
   }
 </style>
 
-
-<h1 class="d-flex justify-content-center m-3">{{category}}</h1>
-
+<div class="m-5"></div>
 <div class="row">
-  <div class="d-flex justify-content-center">
-    <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-      aria-expanded="false">
-      Sort items:
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-      <li><a class="dropdown-item" href="?sort=low-to-high">Price: low to high</a></li>
-      <li><a class="dropdown-item" href="?sort=high-to-low">Price: high to low</a></li>
-      <li><a class="dropdown-item"" href=" ?sort=alpha">Alphabetically</a></li>
-    </ul>
+  <div class="d-flex justify-content-around col-ms-6 align-items-center mb-4 cart-header">
+    <h1 class="fw-normal mb-0 text-black">{{category}}</h1>
+      <div class="d-flex justify-content-center">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          Sort items:
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="?sort=low-to-high">Price: low to high</a></li>
+          <li><a class="dropdown-item" href="?sort=high-to-low">Price: high to low</a></li>
+          <li><a class="dropdown-item"" href=" ?sort=alpha">Alphabetically</a></li>
+        </ul>
+      </div>
   </div>
 </div>
 
