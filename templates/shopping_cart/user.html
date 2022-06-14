@@ -1,0 +1,68 @@
+{% extends "main/base.html" %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% load formtags %}
+
+{% block title %}{{user.username}}{% endblock title %}
+
+{% block head_block %}
+  <link rel="stylesheet" href="{% static 'css/user.css' %}">
+{% endblock %}
+
+{% block body_block %}
+
+<link rel="stylesheet" href="{% static 'css/user_table.css' %}">
+
+{% if request.path == "/user/" %}
+  <h1 class="jumbotron">User page</h1>
+{% else %}
+  <h1 class="jumbotron">Blog page</h1>
+{% endif %}
+
+
+<div class="profile-card">
+  <div class="profile-pic">
+    {% if request.user.profile.image %}
+      <img src="{{request.user.profile.image.url}}" alt="" />
+    {% else %}
+      <img src="/media/profile_pics/default.png" alt="" />
+    {% endif %}
+  </div>
+  <div class="welcome">Welcome back!</div>
+  <div class="user-data">User name: <b>{{user.username}}</b></div>
+  <div class="user-data">Email: <b>{{user.email}}</b></div>
+</div>
+
+<center>
+<div class="row justify-content-center">
+  <div class="col-sm-10">
+    <h2>Order history</h2>
+    <h4>newest at top</h4>
+    <table class="table table-hover m-3">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col" class="text-center col-md-3">Date Completed</th>
+          <th scope="col" class="text-center col-md-3">Number of items</th>
+          <th scope="col" class="text-center col-md-3">Total sum (sek)</th>
+          <th scope="col" class="text-left col-md-2 m-1">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for order in orders %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td class="text-center">{{order.date_ordered}}</td>
+          <td class="text-center">{{order.get_cart_items}}</td>
+          <td class="text-center">{{order.get_cart_total}}</td>
+          <td class="d-flex">
+            <a href="{% url 'order_detail' order.id %}" class="btn btn-outline-success m-1">See more</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+</center>
+{% endblock %}

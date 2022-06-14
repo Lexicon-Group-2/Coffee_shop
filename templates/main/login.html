@@ -1,0 +1,55 @@
+{% extends "main/base.html" %} {% load staticfiles %} {% block body_block %}
+<div class="wrapper">
+  <div class="inner">
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <h3>Login</h3>
+
+      <div class="form-wrapper">
+        <label for="username">User name</label>
+        <input
+          type="text"
+          class="form-control"
+          required
+          type="text"
+          name="username"
+          placeholder="Username"
+        />
+      </div>
+
+      <div class="form-wrapper">
+        <label for="">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          placeholder="Password"
+          id="id_password"
+          data-toggle="password"
+        />
+        <i
+          class="far fa-eye"
+          id="togglePassword"
+          style="
+            margin-left: 280px;
+            cursor: pointer;
+            transform: translateY(-30px);
+          "
+        >
+        </i>
+      </div>
+      <div class="checkbox">
+        <label>
+          Do not have an account? <a href="{% url 'signup' %}">Click here</a> to
+          create one.
+        </label>
+      </div>
+
+      <button type="submit" name="submit">Login</button>
+    </form>
+  </div>
+</div>
+
+<script src="{% static 'js/showPassword.js' %}"></script>
+
+{% endblock %}

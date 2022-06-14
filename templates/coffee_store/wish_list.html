@@ -1,0 +1,44 @@
+{% extends "main/base.html" %}
+
+{% block body_block %}
+  <h1 class="d-flex justify-content-center m-5">Wish List</h1>
+  
+<div class="product-container">
+  {% for product in products %}
+    <div class="product">
+      <div class="imgwrap">
+        <img src="{{product.image1.url}}" />
+        {% if user.is_authenticated %}
+        <a href="{% url 'add_to_favourite' product.id %}">
+          {% else %}
+          <a href=""></a>
+          {% endif %}
+          <img class="heart-btn" src="/media/heart_full.png" alt="" />
+        </a>
+      </div>
+      <div class="card-title card-title-custom">{{product.title}}</div>
+      <div class="card-body card-body-custom">
+        <div class="card-price card-price-custom">{{product.price}}:-</div>
+        <a class="btn btn-outline-secondary add-to-cart-btn">
+          {% if product.id in cart %}
+          <img data-product="{{product.id}}" data-action="add" class="cart-img add-to-cart-img"
+            src="/media/in_the_cart.png" alt="" />
+          {% else %}
+          <img data-product="{{product.id}}" data-action="add" class="cart-img add-to-cart-img update-cart-btn"
+            src="/media/add_to_cart.png" alt="" />
+          {% endif %}
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  {% include 'main/footer.html' %}
+
+  <script type="text/javascript">
+    var user = '{{request.user}}'
+  </script>
+
+  {% load staticfiles %}
+  <script src="{% static 'js/cart.js' %}"></script>
+{% endblock %}

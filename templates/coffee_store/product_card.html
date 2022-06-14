@@ -1,0 +1,70 @@
+<style>
+  .btn-outline-secondary:hover {
+    background-color: aliceblue;
+  }
+  .sort-items-btn {
+    position: absolute;
+    right: 15%;
+    margin-bottom: 50px;
+  }
+</style>
+
+
+<h1 class="d-flex justify-content-center m-3">{{category}}</h1>
+
+<div class="row">
+  <div class="d-flex justify-content-center">
+    <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+      aria-expanded="false">
+      Sort items:
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li><a class="dropdown-item" href="?sort=low-to-high">Price: low to high</a></li>
+      <li><a class="dropdown-item" href="?sort=high-to-low">Price: high to low</a></li>
+      <li><a class="dropdown-item"" href=" ?sort=alpha">Alphabetically</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="product-container">
+  {% for product in products %}
+  <div class="product">
+    <div class="imgwrap">
+      <img src="{{product.image1.url}}" />
+      {% if user.is_authenticated %}
+        <a href="{% url 'add_to_favourite' product.id %}">
+      {% else %}
+        <a href=""></a>
+      {% endif %}
+        {% if product.id in favourites %}
+        <img class="heart-btn" src="/media/heart_full.png" alt="" />
+        {% else %}
+        <img class="heart-btn" src="/media/heart_outline.png" alt="" />
+        {% endif %}
+      </a>
+    </div>
+    <div class="card-title card-title-custom">{{product.title}}</div>
+    <div class="card-body card-body-custom">
+      <div class="card-price card-price-custom">{{product.price}}:-</div>
+      <a class="btn btn-outline-secondary add-to-cart-btn">
+        {% if product.id in cart %}
+          <img data-product="{{product.id}}" data-action="add" class="cart-img add-to-cart-img" src="/media/in_the_cart.png" alt="" />
+        {% else %}
+          <img data-product="{{product.id}}" data-action="add" class="cart-img add-to-cart-img update-cart-btn"
+            src="/media/add_to_cart.png" alt="" />
+        {% endif %}
+      </a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% include 'main/footer.html' %}
+
+<script type="text/javascript">
+  var user = '{{request.user}}'
+</script>
+
+{% load staticfiles %}
+<script src="{% static 'js/cart.js' %}"></script>
+

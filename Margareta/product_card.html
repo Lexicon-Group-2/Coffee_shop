@@ -1,0 +1,53 @@
+<h1 class="row m3">{{category}}</h1>
+
+<div class="btn-group">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Sort by
+ </button>
+</div>
+<div>
+  <ul class="dropdown-menu"></ul> 
+    <div class="filters">
+      <a class="dropdown-item" href="?sort=low-to-high">Price: low to high</a>
+    <div class="filters">
+      <a class="dropdown-item" href="?sort=high-to-low">Price: high to low</a>
+    <div class="filters">
+      <a class="dropdown-item"" href="?sort=alpha">Alphabetically</a>
+</div>  
+<div class="product-container">
+  {% for product in products %}
+  <div class="product">
+    <div class="imgwrap">
+      <img src="{{product.image1.url}}" />
+      {% if user.is_authenticated %}
+        <a href="{% url 'add_to_favourite' product.id %}">
+      {% else %}
+        <a href=""></a>
+      {% endif %}
+        {% if product.id in favourites %}
+        <img class="heart-btn" src="/media/heart_full.png" alt="" />
+        {% else %}
+        <img class="heart-btn" src="/media/heart_outline.png" alt="" />
+        {% endif %}
+      </a>
+    </div>
+    <div class="card-title card-title-custom">{{product.title}}</div>
+    <div class="card-body card-body-custom">
+      <div class="card-price card-price-custom">{{product.price}}:-</div>
+      {% comment %}
+      <a href="" class="btn btn-success add-to-cart-btn">
+        <i class="fas fa-shopping-cart"></i>Add to Cart
+      </a>
+      {% endcomment %}
+      <a href="" class="btn btn-outline-success add-to-cart-btn">
+        <img
+          class="cart-img add-to-cart-img"
+          src="/media/add_to_cart.png"
+          alt=""
+        />
+      </a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+

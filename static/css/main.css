@@ -1,0 +1,684 @@
+@import url("https://fonts.googleapis.com/css?family=Allura:200,300,400,500,600,700,800,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url("https://fonts.googleapis.com/css?family=Lora");
+@import url("https://fonts.googleapis.com/css?family=Barlow");
+
+* {
+  padding: 0;
+  margin: 0;
+  color: #1a1f36;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f4f4f4;
+}
+
+.btn_start {
+  position: relative;
+  padding: 1.4rem 4.2rem;
+  padding-right: 3.1rem;
+  font-size: 1.4rem;
+  color: brown;
+  letter-spacing: 1.1rem;
+  text-transform: uppercase;
+  transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  cursor: pointer;
+  user-select: none;
+}
+
+.nav-link {
+  color: white;
+  font-size: 1.5rem;
+  padding: 5px;
+}
+
+.navbar {
+  padding: 0;
+}
+
+.navbar-tex {
+  color: white;
+  font-size: 1.2rem;
+  display: block;
+  padding-top: 0.8rem;
+}
+
+.cart-img {
+  width: 40px;
+  margin-top: -5px;
+  padding: 0px;
+}
+
+.logout {
+  margin: 5px;
+  color: white;
+  margin-top: 8px;
+}
+
+.fas {
+  color: white;
+}
+
+.fas:hover,
+.logout:hover {
+  color: white;
+}
+
+.nav-item {
+  position: relative;
+}
+
+#cart-total {
+  display: block;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  text-align: center;
+  color: #fff;
+  background: red;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+#favourite-total {
+  display: block;
+  position: absolute;
+  top: 30px;
+  right: 13px;
+  text-align: center;
+  color: #fff;
+  width: 22px;
+  height: 22px;
+  font-size: 14px;
+}
+
+/* CSS for category buttons in the store page */
+.category-container {
+  border-radius: 5px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3), -5px 5px 20px rgba(0, 0, 0, 0.3);
+  transition: 0.2s all ease;
+  width: 200px;
+}
+
+.category-container:hover {
+  transform: scale(1.03);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3),
+  -5px 5px 20px rgba(0, 0, 0, 0.5);
+  transition: 0.2s all ease;
+}
+
+.category-container img {
+  border-radius: 5px;
+}
+
+.product-card-container {
+  display: grid;
+  margin: auto;
+  grid-template-columns: repeat(3, 25%);
+  gap: 25px;
+}
+
+.store-category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3), -5px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.fa-home {
+  font-size: 1.8rem;
+}
+
+.col-md-8 a {
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.url-arrow {
+  font-size: 2rem;
+  margin: 10px;
+}
+
+/* CSS for the product container div */
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 7%;
+  margin-right: 7%;
+}
+
+.product {
+  width: 250px;
+  margin: 25px;
+  border-radius: 10px;
+  border: 2px solid rgb(171, 168, 168);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2), -5px 5px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.product:hover {
+  transform: scale(1.01);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3), -5px 5px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.imgwrap {
+  position: relative;
+  padding: 15px;
+  width: 250px;
+  height: 250px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: all 0.5s ease;
+}
+
+.imgwrap img {
+  width: 100%;
+  height: 100%;
+}
+
+.imgwrap .heart-btn {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.card-title-custom {
+  font-family: "Raleway";
+  font-family: "Lora";
+  font-family: "Barlow";
+  padding: 10px;
+  height: 60px;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.3rem;
+}
+
+.card-body-custom {
+  display: flex;
+  padding: 0px;
+  height: 60px;
+  border: 2px solid rgb(171, 168, 168);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.card-price-custom {
+  font-family: "Allura";
+  /* font-family: 'Barlow'; */
+  font-size: 2.6rem;
+  width: 74%;
+  margin: 3px;
+  text-align: center;
+  font-weight: bold;
+  user-select: none;
+  text-shadow: 4px 4px 4px #828282;
+}
+
+.add-to-cart-btn {
+  width: auto;
+  border: none;
+  border-bottom-right-radius: 12px;
+}
+
+.add-to-cart-btn:hover {
+  background: palegreen;
+  background: black;
+}
+
+.add-to-cart-img {
+  width: 45px;
+  transform: translateY(3px);
+}
+
+.signup-message {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  min-height: 100vh;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.signup-form,
+.update-form {
+  max-width: 450px;
+  margin: 50px auto 0 auto;
+  border: 2px solid rgb(215, 215, 215);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 10px 0px 30px rgb(215, 215, 215),
+    -10px 0px 30px rgb(215, 215, 215);
+  background-image: url("/media/images/Simple-wallpaper-with-coffee-beans-vector-PNG.png");
+}
+
+.update-form {
+  max-width: 600px;
+}
+
+.signup-form h3 {
+  width: 100%;
+
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 10px;
+}
+
+.signup-form h4 {
+  font-size: 1rem;
+  margin-bottom: 13px;
+  text-decoration: none;
+}
+
+.signup-form h4 a:hover {
+  text-decoration: none;
+}
+
+.signup-form form {
+  font-size: 1rem;
+}
+
+.btn-block {
+  margin-top: 0px;
+  width: 100%;
+}
+
+.errorlist {
+  display: none;
+}
+
+.ul-error-list {
+  margin-left: -10px;
+}
+
+.ul-error-list li {
+  padding: 3px;
+}
+
+.btn-close {
+  transition: 0.5s all ease;
+}
+
+.btn-close:hover {
+  transform: rotate(-180deg);
+  transition: 1s all ease;
+}
+
+p label[for="id_image"] {
+  margin-top: -100px;
+}
+
+.margin {
+  margin-top: -25px;
+}
+
+/* A pop message to confirm something */
+.whole-page {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  backdrop-filter: blur(3px);
+  background: rgba(237, 237, 237, 0.336);
+}
+
+.btn-custom {
+  width: 75px;
+  margin: 0 10px 0 10px;
+}
+
+/* Styling the index Page */
+.carousel-img {
+  padding: 0px;
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+p::first-letter {
+  color: brown;
+  font-size: xx-large;
+}
+/* .btn {
+  position: relative;
+  padding: 1.4rem 4.2rem;
+  padding-right: 3.1rem;
+  font-size: 1.4rem;
+  color: brown;
+  letter-spacing: 1.1rem;
+  text-transform: uppercase;
+  transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn:before,
+.btn:after {
+  content: "";
+  position: absolute;
+  transition: inherit;
+  z-index: -1;
+}
+
+.btn:hover {
+  color: brown;
+  transition-delay: 0.5s;
+}
+
+.btn:hover:before {
+  transition-delay: 0s;
+}
+
+.btn:hover:after {
+  background: var(--inv);
+  transition-delay: 0.35s;
+} */
+/* From center */
+
+.from-center:before {
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 0;
+  border: 1px solid var(--inv);
+  border-left: 0;
+  border-right: 0;
+}
+
+.from-center:after {
+  bottom: 0;
+  left: 0;
+  height: 0;
+  width: 100%;
+  background: var(--inv);
+}
+
+.from-center:hover:before {
+  left: 0;
+  width: 100%;
+}
+
+.from-center:hover:after {
+  top: 0;
+  height: 100%;
+}
+
+/* styling for the form: */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Muli-Regular";
+
+  font-size: 13px;
+  margin: 0;
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: "Muli-Regular";
+  color: #333;
+  font-size: 13px;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+  margin: 0;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+:focus {
+  outline: none;
+}
+
+.wrapper {
+  margin: 0px auto;
+  width: 100%;
+  max-width: 400px;
+
+  border-radius: 3px;
+  box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px,
+    rgba(0, 0, 0, 0.12) 0px 3px 6px 0px;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.inner {
+  min-width: 500px;
+  margin: auto;
+  margin-top: 50px;
+  padding-top: 90px;
+  padding-bottom: 48px;
+  background: url("/media/images/Simple-wallpaper-with-coffee-beans-vector-PNG.png");
+  background-attachment: fixed;
+}
+
+.inner h3 {
+  text-transform: uppercase;
+  font-size: 30px;
+  font-family: "Muli-Bold";
+  text-align: center;
+  margin-bottom: 32px;
+  color: #333;
+  letter-spacing: 2px;
+}
+a {
+  text-decoration: none;
+}
+form {
+  width: 75%;
+  padding-left: 40px;
+  align-items: center;
+}
+
+.form-wrapper {
+  margin-bottom: 17px;
+}
+.form-wrapper label {
+  margin-bottom: 9px;
+  display: block;
+}
+
+.form-control {
+  border: 1px solid #ccc;
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 20px;
+  font-family: "Muli-Bold";
+  background: none;
+}
+.form-control:focus {
+  border: 1px solid #ae3c33;
+}
+
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  padding-left: 20px;
+}
+select option[value=""][disabled] {
+  display: none;
+}
+
+button {
+  border: none;
+  width: 152px;
+  height: 40px;
+  margin: auto;
+  margin-top: 29px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: #ae3c33;
+  font-size: 13px;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Muli-SemiBold";
+  border-radius: 20px;
+  overflow: hidden;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+button:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: brown;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+button:hover:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+.checkbox {
+  position: relative;
+}
+.checkbox label {
+  padding-left: 22px;
+  cursor: pointer;
+}
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkmark {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 12px;
+  width: 13px;
+  border-radius: 2px;
+  background-color: #ebebeb;
+  border: 1px solid #ccc;
+  font-family: Material-Design-Iconic-Font;
+  color: #000;
+  font-size: 10px;
+  font-weight: bolder;
+}
+.checkmark:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  content: "\f26b";
+}
+
+@media (max-width: 991px) {
+  .inner {
+    min-width: 768px;
+  }
+}
+@media (max-width: 767px) {
+  .inner {
+    min-width: auto;
+    background: none;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  form {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+.btn_start {
+  position: relative;
+  padding: 1.4rem 4.2rem;
+  padding-right: 3.1rem;
+  font-size: 1.4rem;
+  color: brown;
+  letter-spacing: 1.1rem;
+  text-transform: uppercase;
+  transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+  cursor: pointer;
+  user-select: none;
+}
+.footer-image {
+  height: 200px;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  object-fit: cover;
+}
+
+.about-title {
+  color: brown;
+  padding: 20px;
+  margin-top: 30px;
+  letter-spacing: 1.1rem;
+  text-transform: uppercase;
+  transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+}

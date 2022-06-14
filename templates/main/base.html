@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load staticfiles %}
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Load the bootstrap CSS -->
+    {% load bootstrap5 %}
+
+    <!-- Display django.contrib.messages as Bootstrap alerts -->
+    {% bootstrap_messages %}
+
+    <!-- Load favicon to remove some console errors -->
+    <link rel="icon" href="/media/favicon.ico" />
+
+    <!-- Load font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+
+    <!-- Load the bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Load our static css files after this line -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}" />
+    {% block head_block %} {% endblock %}
+  </head>
+
+  <body>
+    <!-- Include a navbar file -->
+    {% include 'main/navbar.html' %}
+
+    <div class="container">
+      {% block body_block %}
+      
+      {% endblock %}
+    </div>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>
