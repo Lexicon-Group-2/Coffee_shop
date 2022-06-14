@@ -55,3 +55,41 @@ def update_item(request):
     orderItem.delete()
   
   return JsonResponse('Item updated', safe=False)
+
+
+def confirm_order(request):
+  customer = request.user.customer
+  order = Order.objects.get(customer=customer, completed=False)
+  order.completed = True
+  order.save()
+  return render(request, 'main/index.html')
+
+
+def user(request):
+  customer = request.user.customer
+  orders = Order.objects.filter(customer=customer, completed=True).order_by("-date_ordered")
+  
+  context = {
+    'orders': orders,
+  }
+
+  return render(request, 'shopping_cart/user.html', context)
+
+def order_detail(request, order_id=None):
+  items = OrderItem.objects.filter(order=order_id)
+  order = Order.objects.get(id=order_id)
+  print(order.get_cart_total)
+  for i in items.iterator():
+    print(i.id)
+
+  
+  customer = request.user.customer
+  order2 = Order.objects.get(customer=customer, completed=False).orderitem_set.all()
+  in_cart = [i.product.id for i in order2.iterator()]
+  
+  context = {
+    'products': items,
+    'order': order,
+    'cart': in_cart,
+  }
+  return render(request, 'shopping_cart/order_detail.html', context)

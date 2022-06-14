@@ -1,0 +1,65 @@
+{% extends "main/base.html" %}
+{% load staticfiles %}
+
+{% block body_block %}
+<link rel="stylesheet" href="{% static 'css/shopping_cart.css' %}" />
+<div class="cart-top-margin"></div>
+<div class="d-flex justify-content-between align-items-center mb-4 cart-header">
+  <h1 class="fw-normal mb-0 text-black">Shopping Cart - {{order.date_ordered}}</h1>
+  <a class="btn btn-outline-dark btn-lg" href="{% url 'user' %}">Go back</a>
+</div>
+
+<div class="cart-items-container"></div>
+<div class="cart-header">
+  <div class="header-image">Image</div>
+  <div class="header-name">Product name</div>
+  <div class="header-price">Price</div>
+  <div class="header-arrows"></div>
+  <div class="header-quantity">Quant.</div>
+  <div class="header-total">Total</div>
+  <div class="header-remove"></div>
+</div>
+<div class="line"></div>
+
+{% for i in products %}
+<div class="cart-item">
+  <div class="shopping-cart-img"><img src="{{i.product.image1.url}}" alt=""></div>
+  <div class="shopping-cart-product-title">{{i.product.title}}</div>
+  <div class="shopping-cart-product-price">{{i.product.price}}:-</div>
+  <div class="arrow-down"></div>
+  <div class="arrow-up"></div>
+  <div class="shopping-cart-product-quantity">{{i.quantity}}</div>
+  <div class="shopping-cart-product-total">{{i.get_total}}:-</div>
+  <div class="shopping-cart-action">
+    {% if i.product.id in cart %}
+      <img data-product="{{i.product.id}}" data-action="add" class="cart-img add-to-cart-img" src="" 
+      alt="" />
+    {% else %}
+      <img data-product="{{i.product.id}}" data-action="add" class="cart-img add-to-cart-img update-cart-btn"
+      src="/media/add_to_cart.png" alt="" />
+    {% endif %}
+  </div>
+
+</div>
+{% endfor %}
+<div class="line"></div>
+</div>
+
+<div class="d-flex justify-content-between align-items-center mb-4 cart-header">
+  <h2>Number of items: {{order.get_cart_items}}</h2>
+  <h2>Total price: {{order.get_cart_total}}</h2>
+</div>
+
+<div class="d-flex justify-content-between align-items-center mb-4 cart-header">
+  <h1 class="fw-normal mb-0 text-black"></h1>
+</div>
+
+{% include 'main/footer.html' %}
+
+<script type="text/javascript">
+  var user = '{{request.user}}'
+</script>
+<script src="{% static 'js/cart.js' %}"></script>
+
+
+{% endblock %}

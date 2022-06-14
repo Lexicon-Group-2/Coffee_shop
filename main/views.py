@@ -81,8 +81,9 @@ def user_logout(request):
   logout(request)
   return render(request, 'main/logout.html', {})
 
-def user(request):
-  return render(request, 'main/user.html', {})
+# This view was moved to the shopping_cart app
+#def user(request):
+#  return render(request, 'main/user.html', {})
 
 # welcome page
 def index(request):
