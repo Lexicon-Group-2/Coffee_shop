@@ -23,7 +23,6 @@ class Product(models.Model):
   image2 = models.ImageField(upload_to='product_images', blank=True)
   price = models.IntegerField()
   url   = models.URLField(blank=True)
-  favourites = models.ManyToManyField(User, related_name='favourites', default=None, blank=True)
-  
+
   def __str__(self):
     return self.title
