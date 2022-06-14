@@ -1,0 +1,83 @@
+{% extends "main/base.html" %}
+{% load staticfiles %}
+{% block title %}Fika room{% endblock title %}
+
+
+{% block body_block %}
+
+<link rel="stylesheet" href="{% static 'css/fika_room.css' %}">
+
+<div class="page-content page-container" id="page-content">
+  <div class="padding">
+    <div class="row container d-flex justify-content-center">
+      <div class="col-md-10">
+        <div class="box box-warning direct-chat direct-chat-warning">
+
+          <div class="box-header with-border">
+            <h2>Welcome to our Fika Room</h2>
+            <div class="box-tools pull-right">
+              <h3 class="msg-count-txt">Messages:</h3>
+              <span class="badge bg-yellow">{{count}}</span>
+            </div>
+          </div>
+
+          <div class="box-body">
+
+            <div class="direct-chat-messages">
+              {% for msg in msgs %}
+                {% ifequal request.user msg.user %}
+                  <div class="direct-chat-msg right">
+                    <div class="direct-chat-info clearfix pull-right">
+                      <span class="direct-chat-name pull-right">You {{loopcounter}}</span><br>
+                      <span class="direct-chat-timestamp">{{msg.date_added}}</span>
+                    </div>
+                    {% if msg.user.profile.image %}
+                      <img class="direct-chat-img" src="{{ msg.user.profile.image.url }}" alt="" />
+                    {% else %}
+                      <img class="direct-chat-img" src="/media/profile_pics/default.png" alt="" />
+                    {% endif %}
+                    <div class="direct-chat-text">
+                      <div class="message-right">{{msg.content}}</div>
+                    </div>
+                  </div>
+                {% else %}
+                  <div class="direct-chat-msg">
+                    <div class="direct-chat-info clearfix">
+                      <span class="direct-chat-name pull-left">{{msg.user}}</span><br>
+                      <span class="direct-chat-timestamp pull-left">{{msg.date_added}}</span>
+                    </div>
+                      {% if msg.user.profile.image %}
+                        <img class="direct-chat-img" src="{{ msg.user.profile.image.url }}" alt="" />
+                      {% else %}
+                        <img class="direct-chat-img" src="/media/profile_pics/default.png" alt="" />
+                      {% endif %}
+
+                    <div class="direct-chat-text">
+                      <div class="message-left">{{msg.content}}</div>
+                    </div>
+                    
+                  </div>
+                {% endifequal %}
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="box-footer">
+            <form method="POST" autocomplete="off" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="input-group">
+                <input type="text" name="message" placeholder="Type Message ..." class="form-control custom-form-control">
+                <span class="input-group-btn">
+                  <input class="btn btn-warning btn-flat" type="submit" name="submit" value="Send">
+                </span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

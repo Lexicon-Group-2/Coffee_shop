@@ -13,6 +13,11 @@
             <a class="logout nav-link" href="{% url 'admin:index' %}">Admin</a>
           </li>
         {% endif %}
+        {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="logout nav-link" href="{% url 'fika_room' %}">Fika room</a>
+          </li>
+        {% endif %}
       </ul>
     </div>
 
