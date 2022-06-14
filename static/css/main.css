@@ -641,3 +641,11 @@ button:hover:before {
   cursor: pointer;
   user-select: none;
 }
+.footer-image {
+  height: 200px;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  object-fit: cover;
+}
