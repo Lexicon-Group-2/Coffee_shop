@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>A comprehensive guide on coffee tasting</h2>
+      <h5>Dec 7, 2017</h5>
+      <div class="fakeimg" style="height:200px;">
+        <img src="art1.jpg" alt="coffee" class="center" style="height: 160px;">
+      </div>
+      <p>The coffee flavor you get to taste in your cup, is the result of every single step taken between the time the coffee was harvested to the time you opened the pack and brewed it (including the brewing process).
+
+         The taste(s) is perceived via the taste buds. Each and every one of us perceives them slightly differently due to many factors & habits that affect our taste buds (smoking, drinking, type of food we normally consume, etc). The basic 5 tastes everyone tends to be able to perceive are: bitterness, ,acidity, sweetness, saltiness and body..</p>
+      <p><b>Bitterness</b>, the taste most people associate coffee with. The truth is that coffee has some bitter components (caffeine for starters) and the melanoidins that get created during the roasting process, but keep in mind that coffee if roasted & brewed properly does not have to be bitter.</p><br>
+
+       <p><b>Acidity –</b> the taste that makes coffee have a certain vividness or sparkle. Acidity is what makes coffee to not taste flat. Acidity is the element that makes the coffee have a hint of lemon, wine, or even pineapple & fruity taste.</p><br>
+
+       <p><b>Sweetness-</b> as well as saltiness can be the sugary or salty taste which you know from normal sugar & salt. Both these tastes could appear in very different levels, prompting you to perceive them merely as hints.</p>
+
+       <p>The body or mouth feel is definitely not a flavor but most probably a sensation. It refers to the texture and heaviness of the coffee on your tongue and mouth. It’s a feeling rather than anything else you get with the 1st sip of coffee.
+       </p>
+ </div>
+  </div>
+</div>
+</body>
+</html>
