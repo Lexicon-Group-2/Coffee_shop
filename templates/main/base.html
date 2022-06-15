@@ -33,11 +33,42 @@
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
     <link rel="stylesheet" href="{% static 'css/homepage.css' %}" />
     {% block head_block %} {% endblock %}
+
+    <style>
+      .navbar-background {
+        background: rgb(188, 180, 180);
+      }
+    
+      .nav-img {
+        position: relative;
+        top: -6px;
+        margin-right: 3px;
+      }
+    
+      .nav-img2 {
+        position: relative;
+        margin-right: 5px;
+      }
+    
+      .nav-item {
+        border-radius: 5px;
+        transition: 0.1s all ease;
+      }
+    
+      .nav-item:hover {
+        background: rgba(204, 202, 202, 0.511);
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2), -5px 5px 20px rgba(0, 0, 0, 0.1);
+        transform: scale(1.05);
+    
+        transition: 0.2s all ease;
+      }
+    </style>
+    
   </head>
 
   <body>
     <!-- Include a navbar file -->
-    {% include 'main/navbar.html' %}
+    {% include 'main/navbar-yuran.html' %}
 
     <div class="container">
       {% block body_block %}

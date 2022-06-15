@@ -1,15 +1,53 @@
-  <header id="header">
-    <div id="header-img">
-      <img src="" alt="">
-    </div>
 
-    <nav id="nav-bar">
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Gallery</a></li>
-      </ul>
-    </nav>
-  </header>
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/navbar2.css' %}">
 
 
+<div class="navbar">
+  <div class="logo">
+    <a class="active" href="{% url 'index' %}"><img src="/media/coffee_bean.png" width="150px">Fika Shop</a>
+
+
+  </div>
+  <nav>
+    <ul id="MenuItems">
+
+      <li>
+        <a class="active" href="{% url 'index' %}"><img src="/media/store.png" style="width: 40px; height:50px">
+          Store</a>
+      </li>
+      <li class="nav-item">
+        <a class="logout nav-link" href="{% url 'home' %}">Store</i>
+        </a>
+      </li>
+      {% if user.is_superuser %}
+        <li>
+          <a class="active" href="{% url 'admin:index' %}"><img src="/media/admin.png" style="width: 40px; height:50px">
+          Admin</a>
+        </li>
+      {% endif %}
+
+      {% if user.is_authenticated %}
+
+      <li><a class="active" href="{% url 'favourite' %}"><img src="/media/wish_list.png"
+            style="width: 40px; height:50px" class="cart-img"></a></li>
+      <li><a class="active" href="{% url 'user' %}"><img src="/media/user.png" style="width: 40px; height:50px">{{
+          user.username }}</a></li>
+      <li><a class="active" href="{% url 'logout' %}"><img src="/media/logout1.png" style="width: 40px; height:50px">
+          Logout</a></li>
+      {% else %}
+
+      <li><a class="active" href="{% url 'signup' %}"><img src="/media/register.jpg" style="width: 40px; height:50px">
+          Signup</a></li>
+      <li><a class="active" href="{% url 'login' %}"><img src="/media/login.png" style="width: 40px; height:50px">
+          Login</a></li>
+      {% endif %}
+      <li><a class="active" href="{% url 'cart' %}"><img src="/media/cart.png" style="width: 40px; height:50px"></a>
+      </li>
+
+    </ul>
+  </nav>
+  <div class="menu-icon">
+    <img src="/media/menu1.png" style="width: 40px; height:50px" class="menu-icon" onclick="menutoggle()">
+  </div>
+</div>

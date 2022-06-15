@@ -1,5 +1,8 @@
-{% extends "main/base.html" %} {% load staticfiles %} {% load widget_tweaks %}
-{% load formtags %} {% block title %}{% endblock title %} {% block head_block %}
+{% extends "main/base.html" %}
+{% load staticfiles %}
+
+
+{% block head_block %}
 
 <link
   rel="stylesheet"
@@ -23,16 +26,22 @@
   }
 </style>
 
+
+
 {% endblock %} {% block body_block %}
+
+<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+
+
 <div class="container text-center p-5">
   <div class="mb-4 homepage-title">
     <h1 class="text-uppercase fw-lighter">It's All about Coffee</h1>
 
-    <a style="text-decoration: none" href="/" class="fikka_button">
+    <a style="text-decoration: none" href="{% url 'fika_room' %}" class="fikka_button">
       <h1 class="text-center fw-bold display-1 mb-5" data-aos="zoom-in">
         Let's<span class="text-danger"> Fika</span>
-      </h1></a
-    >
+      </h1>
+    </a>
   </div>
 
   <div class="row justify-content-md-center" data-aos="fade-up">
@@ -83,9 +92,12 @@
 
   <div class="container-fluid my-6 p-5">
     <hr />
+    <a href="{% url 'store' %}">
     <h3 class="text-center fw-bold mb-5 about-title">
       Best <span> Seller </span>
     </h3>
+    </a>
+    
 
     <div class="row">
       <div class="col-12 m-auto">

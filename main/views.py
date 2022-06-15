@@ -9,7 +9,7 @@ from main.forms  import UserForm, UserProfileForm
 from main.models import Profile
 
 # an email should be unique, we will use this little fix
-User._meta.get_field('email')._unique = True
+# User._meta.get_field('email')._unique = True
 
 
 from django import template

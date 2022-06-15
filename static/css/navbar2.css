@@ -1,0 +1,72 @@
+/*  navbar uran*/
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  
+}
+
+nav {
+  flex: 1;
+  text-align: right;
+}
+
+nav ul {
+  display: inline-block;
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 40px;
+}
+
+nav ul li i {
+  display: inline-block;
+  display: contents;
+  margin-left: 5px;
+
+}
+
+a {
+  text-decoration: none;
+  /* color: #555; */
+  font-size: 28px;
+  color: #ae3c33;
+}
+
+/*  end images control in navbar*/
+
+/* media query for menu response*/
+
+@media only screen and (max-width:800px) {
+  nav ul {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background: #777;
+    width: 100%;
+    overflow: hidden;
+    transition: transfrom 0.7s;
+  }
+
+  nav ul li {
+    display: block;
+    margin-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+  }
+
+  nav ul li a {
+    color: #fff;
+  }
+
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+
+}
+
+/* end media response*/
